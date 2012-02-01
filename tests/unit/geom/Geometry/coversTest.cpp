@@ -1,4 +1,4 @@
-// 
+//
 // Test Suite for Geometry's covers() and coveredBy() functions
 
 // tut

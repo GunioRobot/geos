@@ -1,5 +1,5 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
 SUBDIRS = \
     algorithm \
@@ -40,4 +40,4 @@ libgeos_la_LIBADD = \
     planargraph/libplanargraph.la \
     precision/libprecision.la \
     simplify/libsimplify.la \
-    util/libutil.la  
+    util/libutil.la

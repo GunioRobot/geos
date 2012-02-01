@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 # Run with:
 # php -n -d enable_dl=On -d extension_dir=.. test.php
@@ -397,7 +397,7 @@ class test extends PHPUnit_Framework_TestCase
         $prj = $g->interpolate(2, TRUE);
         $this->assertNotNull($prj);
         $this->assertEquals('POINT (10 0)', $writer->write($prj));
-    
+
     }
 
     public function testGeometry_buffer()
@@ -1288,7 +1288,7 @@ MULTIPOINT(
         $gs = $g->extractUniquePoints();
         if ( ! $gs ) RETURN_NULL(); /* should get an exception before */
 
-        $this->assertEquals( 
+        $this->assertEquals(
 'MULTIPOINT (0 0, 1 0, 1 1, 0 1, 10 10, 10 14, 14 14, 14 10, 11 11, 11 12, 12 12, 12 11, 2 3, 3 4, 9 0)'
             , $writer->write($gs));
     }
@@ -1318,7 +1318,7 @@ MULTIPOINT(
         $g2 = $reader->read('LINESTRING(0 0, 10 0)');
 
         $this->assertFalse( $g1->disjoint($g2) );
-        $this->assertTrue( $g1->touches($g2) ); 
+        $this->assertTrue( $g1->touches($g2) );
         $this->assertTrue( $g1->intersects($g2) );
         $this->assertFalse( $g1->crosses($g2) );
         $this->assertFalse( $g1->within($g2) );
@@ -1333,7 +1333,7 @@ MULTIPOINT(
         $g2 = $reader->read('LINESTRING(0 0, 10 0)');
 
         $this->assertFalse( $g1->disjoint($g2) );
-        $this->assertFalse( $g1->touches($g2) ); 
+        $this->assertFalse( $g1->touches($g2) );
         $this->assertTrue( $g1->intersects($g2) );
         $this->assertFalse( $g1->crosses($g2) );
         $this->assertTrue( $g1->within($g2) );
@@ -1348,7 +1348,7 @@ MULTIPOINT(
         $g2 = $reader->read('LINESTRING(0 0, 10 0)');
 
         $this->assertFalse( $g1->disjoint($g2) );
-        $this->assertFalse( $g1->touches($g2) ); 
+        $this->assertFalse( $g1->touches($g2) );
         $this->assertTrue( $g1->intersects($g2) );
         $this->assertTrue( $g1->crosses($g2) );
         $this->assertFalse( $g1->within($g2) );
@@ -1363,7 +1363,7 @@ MULTIPOINT(
         $g2 = $reader->read('LINESTRING(0 0, 10 0)');
 
         $this->assertFalse( $g1->disjoint($g2) );
-        $this->assertFalse( $g1->touches($g2) ); 
+        $this->assertFalse( $g1->touches($g2) );
         $this->assertTrue( $g1->intersects($g2) );
         $this->assertFalse( $g1->crosses($g2) );
         $this->assertFalse( $g1->within($g2) );
@@ -1378,7 +1378,7 @@ MULTIPOINT(
         $g2 = $reader->read('LINESTRING(0 0, 10 0)');
 
         $this->assertFalse( $g1->disjoint($g2) );
-        $this->assertFalse( $g1->touches($g2) ); 
+        $this->assertFalse( $g1->touches($g2) );
         $this->assertTrue( $g1->intersects($g2) );
         $this->assertFalse( $g1->crosses($g2) );
         $this->assertTrue( $g1->within($g2) );
@@ -1393,7 +1393,7 @@ MULTIPOINT(
         $g2 = $reader->read('POLYGON((5 -5, 5 5, 15 5, 15 -5, 5 -5))');
 
         $this->assertFalse( $g1->disjoint($g2) );
-        $this->assertFalse( $g1->touches($g2) ); 
+        $this->assertFalse( $g1->touches($g2) );
         $this->assertTrue( $g1->intersects($g2) );
         $this->assertFalse( $g1->crosses($g2) );
         $this->assertFalse( $g1->within($g2) );
@@ -1408,7 +1408,7 @@ MULTIPOINT(
         $g2 = $reader->read('POINT(15 15)');
 
         $this->assertTrue( $g1->disjoint($g2) );
-        $this->assertFalse( $g1->touches($g2) ); 
+        $this->assertFalse( $g1->touches($g2) );
         $this->assertFalse( $g1->intersects($g2) );
         $this->assertFalse( $g1->crosses($g2) );
         $this->assertFalse( $g1->within($g2) );
@@ -1423,7 +1423,7 @@ MULTIPOINT(
         $g2 = $reader->read('POINT(5 0)');
 
         $this->assertFalse( $g1->disjoint($g2) );
-        $this->assertTrue( $g1->touches($g2) ); 
+        $this->assertTrue( $g1->touches($g2) );
         $this->assertTrue( $g1->intersects($g2) );
         $this->assertFalse( $g1->crosses($g2) );
         $this->assertFalse( $g1->within($g2) );
@@ -2118,7 +2118,7 @@ MULTIPOINT(
         $this->assertEquals(
             '010100000000000000000018400000000000001C40',
             $writer->writeHEX($g));
-        // 2D LITTLE endian + SRID 
+        // 2D LITTLE endian + SRID
         $writer->setIncludeSRID(TRUE);
         $this->assertEquals(
             '01010000202B00000000000000000018400000000000001C40',
@@ -2130,11 +2130,11 @@ MULTIPOINT(
         $this->assertEquals('00000000014018000000000000401C000000000000',
             $writer->writeHEX($g));
         // 2D BIG endian + SRID
-        $writer->setIncludeSRID(TRUE); 
+        $writer->setIncludeSRID(TRUE);
         $this->assertEquals(
             '00200000010000002B4018000000000000401C000000000000',
             $writer->writeHEX($g));
-        $writer->setIncludeSRID(FALSE); 
+        $writer->setIncludeSRID(FALSE);
 
         $writer->setOutputDimension(3); // 3D
 
@@ -2155,11 +2155,11 @@ MULTIPOINT(
         $this->assertEquals('00000000014018000000000000401C000000000000',
             $writer->writeHEX($g));
         // 3D BIG endian + SRID (2D input)
-        $writer->setIncludeSRID(TRUE); 
+        $writer->setIncludeSRID(TRUE);
         $this->assertEquals(
             '00200000010000002B4018000000000000401C000000000000',
             $writer->writeHEX($g));
-        $writer->setIncludeSRID(FALSE); 
+        $writer->setIncludeSRID(FALSE);
 
 
         $g = $reader->read('POINT(6 7 8)');
@@ -2197,7 +2197,7 @@ MULTIPOINT(
             '010100008000000000000018400000000000001C400000000000002040',
             $writer->writeHEX($g));
         // 3D BIG endian (3D input)
-        $writer->setByteOrder(0); 
+        $writer->setByteOrder(0);
         $this->assertEquals(
             '00800000014018000000000000401C0000000000004020000000000000',
             $writer->writeHEX($g));
@@ -2223,7 +2223,7 @@ MULTIPOINT(
         $writer->setTrim(TRUE);
         $writer->setOutputDimension(3);
 
-        
+
         // 2D LITTLE endian
         $g = $reader->readHEX(
             '010100000000000000000018400000000000001C40'
@@ -2238,7 +2238,7 @@ MULTIPOINT(
         $this->assertEquals('POINT (6 7)', $writer->write($g));
         $this->assertEquals(0, $g->getSRID());
 
-        // 2D LITTLE endian + SRID 
+        // 2D LITTLE endian + SRID
         $g = $reader->readHEX(
             '01010000202B00000000000000000018400000000000001C40'
         );
@@ -2252,14 +2252,14 @@ MULTIPOINT(
         $this->assertEquals('POINT (6 7)', $writer->write($g));
         $this->assertEquals(43, $g->getSRID());
 
-        // 3D LITTLE endian 
+        // 3D LITTLE endian
         $g = $reader->readHEX(
             '010100008000000000000018400000000000001C400000000000002040'
         );
         $this->assertEquals('POINT Z (6 7 8)', $writer->write($g));
         $this->assertEquals(0, $g->getSRID());
 
-        // 3D BIG endian 
+        // 3D BIG endian
         $g = $reader->readHEX(
             '00800000014018000000000000401C0000000000004020000000000000'
         );

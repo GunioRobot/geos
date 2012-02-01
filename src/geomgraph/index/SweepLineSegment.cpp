@@ -8,7 +8,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  **********************************************************************/
@@ -98,8 +98,8 @@ SweepLineSegment::computeIntersections(SweepLineSegment *ss,
  * files.
  *
  * Revision 1.8  2003/10/15 15:30:32  strk
- * Declared a SweepLineEventOBJ from which MonotoneChain and 
- * SweepLineSegment derive to abstract SweepLineEvent object 
+ * Declared a SweepLineEventOBJ from which MonotoneChain and
+ * SweepLineSegment derive to abstract SweepLineEvent object
  * previously done on void * pointers.
  * No more compiler warnings...
  *

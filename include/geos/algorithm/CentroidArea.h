@@ -8,7 +8,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  **********************************************************************/
@@ -87,8 +87,8 @@ private:
 	// temporary variable to hold centroid of triangle
 	geom::Coordinate triangleCent3;
 
-	/// Partial area sum 
-	double areasum2;       
+	/// Partial area sum
+	double areasum2;
 
 	/// partial centroid sum
 	geom::Coordinate cg3;
@@ -100,7 +100,7 @@ private:
 	void addShell(const geom::CoordinateSequence *pts);
 
 	void addHole(const geom::CoordinateSequence *pts);
-	
+
 	void addTriangle(const geom::Coordinate &p0, const geom::Coordinate &p1,
 			const geom::Coordinate &p2,bool isPositiveArea);
 

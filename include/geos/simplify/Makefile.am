@@ -1,11 +1,11 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
-SUBDIRS = 
+SUBDIRS =
 
 geosdir = $(includedir)/geos/simplify
 
-EXTRA_DIST = 
+EXTRA_DIST =
 
 geos_HEADERS = \
     DouglasPeuckerLineSimplifier.h \

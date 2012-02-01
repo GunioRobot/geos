@@ -6,7 +6,7 @@
 #
 # This is free software; you can redistribute and/or modify it under
 # the terms of the GNU Lesser General Public Licence as published
-# by the Free Software Foundation. 
+# by the Free Software Foundation.
 # See the COPYING file for more information.
 #
 #################################################################################
@@ -21,11 +21,11 @@ if(GEOS_ENABLE_TESTS)
 
   add_executable(bug234 bug234.cpp)
 
-  if(APPLE AND GEOS_ENABLE_MACOSX_FRAMEWORK) 
-    target_link_libraries(bug234 GEOS) 
-  else() 
-    target_link_libraries(bug234 geos) 
-  endif() 
+  if(APPLE AND GEOS_ENABLE_MACOSX_FRAMEWORK)
+    target_link_libraries(bug234 GEOS)
+  else()
+    target_link_libraries(bug234 geos)
+  endif()
 
   add_executable(TestSweepLineSpeed
 	TestSweepLineSpeed.cpp

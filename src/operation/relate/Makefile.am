@@ -1,11 +1,11 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
-SUBDIRS = 
+SUBDIRS =
 
 noinst_LTLIBRARIES = liboprelate.la
 
-INCLUDES = -I$(top_srcdir)/include 
+INCLUDES = -I$(top_srcdir)/include
 
 liboprelate_la_SOURCES = \
     EdgeEndBuilder.cpp \
@@ -15,6 +15,6 @@ liboprelate_la_SOURCES = \
     RelateNode.cpp \
     RelateNodeFactory.cpp \
     RelateNodeGraph.cpp \
-    RelateOp.cpp 
+    RelateOp.cpp
 
-liboprelate_la_LIBADD = 
+liboprelate_la_LIBADD =

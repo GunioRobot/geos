@@ -13,5 +13,5 @@ TestPreparedPolygonPredicate.xml
 TestPreparedPredicatesWithGeometryCollection.xml
  - requires using custom operation (PreparedGeometryOperation)
 
-TestUnaryUnion.xml 
- -  requires geom::Geometry::Union() still unported 
+TestUnaryUnion.xml
+ -  requires geom::Geometry::Union() still unported

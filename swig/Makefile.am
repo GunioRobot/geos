@@ -1,5 +1,5 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
 
 DIST_SUBDIRS = python ruby
@@ -14,4 +14,4 @@ if ENABLE_RUBY
 endif
 
 EXTRA_DIST = \
-	geos.i 
+	geos.i

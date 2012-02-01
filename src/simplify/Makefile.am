@@ -1,11 +1,11 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
-SUBDIRS = 
+SUBDIRS =
 
 noinst_LTLIBRARIES = libsimplify.la
 
-INCLUDES = -I$(top_srcdir)/include 
+INCLUDES = -I$(top_srcdir)/include
 
 libsimplify_la_SOURCES = \
     DouglasPeuckerLineSimplifier.cpp \
@@ -17,4 +17,4 @@ libsimplify_la_SOURCES = \
     TaggedLinesSimplifier.cpp \
     TopologyPreservingSimplifier.cpp
 
-libsimplify_la_LIBADD = 
+libsimplify_la_LIBADD =

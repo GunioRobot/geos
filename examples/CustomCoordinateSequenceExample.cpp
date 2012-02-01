@@ -7,7 +7,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  **********************************************************************
@@ -57,7 +57,7 @@ int main(int argc, char** argv) {
 	point_3d p3={240,200,DoubleNotANumber};
 	point_3d p4={55,55,DoubleNotANumber};
 	point_3d p5={140,120,DoubleNotANumber};
-	
+
 	//Array of point_3d (internal storage format)
 	point_3d points[5];
 	points[0]=p1;

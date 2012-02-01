@@ -5,7 +5,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  * ========================================================================= */
@@ -76,10 +76,10 @@
 
         /* Get the length */
         $2 = RARRAY_LEN($input);
-      
+
         /* Allocate space for the C array. */
         $1 = (GeosLinearRing**) malloc($2*sizeof(GeosLinearRing*));
-      
+
         for(size_t i = 0; i<$2; i++)
         {
             /* Get the Ruby Object */
@@ -94,7 +94,7 @@
 
             /* Put the pointer in the array */
             $1[i] = ring;
-        }    
+        }
     }
 }
 

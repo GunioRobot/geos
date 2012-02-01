@@ -1,4 +1,4 @@
-// 
+//
 // Test Suite for geos::geom::CoordinateList class.
 
 // tut
@@ -40,7 +40,7 @@ namespace tut
     void object::test<1>()
     {
 		using geos::geom::Coordinate;
-		
+
 		const Coordinate a(0, 0);
 		const Coordinate b(10, 10);
 		const Coordinate c(20, 20);
@@ -124,7 +124,7 @@ namespace tut
     clist.insert(clist.end(), Coordinate(1, 1), true);
     ensure_equals( clist.size(), 3u );
 
-    geos::geom::CoordinateList::iterator it = clist.end(); 
+    geos::geom::CoordinateList::iterator it = clist.end();
     --it;
     clist.insert(it, Coordinate(0, 0), false);
     ensure_equals( clist.size(), 3u );

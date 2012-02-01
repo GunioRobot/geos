@@ -1,15 +1,15 @@
 #
 # Building on Win32 with Visual C++ 7.0, 7.1, 8.0 or 9.0
 ###############################################################################
-# 
+#
 # Produces:
 #  geos.lib: static library for use of C or C++ API.
 #  geos.dll: DLL - only exports the C API
-#  geos_i.lib: stub library to link against for use of geos.dll. 
+#  geos_i.lib: stub library to link against for use of geos.dll.
 #
 #  geos_d.lib: debug static library for use of C or C++ API.
 #  geos_d.dll: debug DLL - only exports the C API
-#  geos_i_d.lib: debug stub library to link against for use of geos.dll. 
+#  geos_i_d.lib: debug stub library to link against for use of geos.dll.
 #
 # This makefile mostly maintained by Frank Warmerdam <warmerdam@pobox.com>
 # with support by Mateusz Loskot <mateusz@loskot.net>
@@ -310,7 +310,7 @@ all: $(LIBNAME) $(DLLNAME) $(CDLLNAME) TestSweepLineSpeed.exe geostest.exe
 
 check: all
 	TestSweepLineSpeed.exe
-	
+
 
 $(LIBNAME):	$(GEOS_ROOT)\include\geos\platform.h $(GEOS_ROOT)\include\geos\version.h ..\capi\geos_c.h $(OBJ)
 	if exist $(LIBNAME) del $(LIBNAME)
@@ -323,7 +323,7 @@ $(DLLNAME):	$(OBJ)
 $(CDLLNAME): ..\capi\geos_c.obj ..\capi\geos_ts_c.obj $(DLLNAME)
 	$(LINK) /dll /debug ..\capi\geos_c.obj ..\capi\geos_ts_c.obj $(LIBNAME) /out:$(CDLLNAME) /implib:$(CLIBNAME)
 	if exist $(CDLLNAME).manifest mt -manifest $(CDLLNAME).manifest -outputresource:$(CDLLNAME);2
-  
+
 $(GEOS_ROOT)\include\geos\platform.h: $(GEOS_ROOT)\include\geos\platform.h.vc
 	$(CP) $(GEOS_ROOT)\include\geos\platform.h.vc $(GEOS_ROOT)\include\geos\platform.h
 

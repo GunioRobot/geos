@@ -1,5 +1,5 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
 SUBDIRS = \
     buffer \
@@ -11,15 +11,15 @@ SUBDIRS = \
     relate \
     union \
     sharedpaths \
-    valid       
+    valid
 
 noinst_LTLIBRARIES = liboperation.la
 
-INCLUDES = -I$(top_srcdir)/include 
+INCLUDES = -I$(top_srcdir)/include
 
 liboperation_la_SOURCES = \
 	GeometryGraphOperation.cpp \
-	IsSimpleOp.cpp 
+	IsSimpleOp.cpp
 
 liboperation_la_LIBADD = \
     buffer/libopbuffer.la \

@@ -2654,7 +2654,7 @@
 	  include/geos/util/UniqueCoordinateArrayFilter.h: Added pragma to
 	  disable Visual C++ warning C4251 - safe to ignore
 	  (http://support.microsoft.com/kb/813810/)
-	  
+
 
 2010-03-29 11:21  Mateusz Loskot <mateusz@loskot.net>
 
@@ -8478,8 +8478,8 @@
 	* [r2116] source/geom/prep/PreparedPolygonLineIntersection.cpp,
 	  source/headers/geos/geom/prep/PreparedPolygonLineIntersection.h:
 	  Deleted. not used, not needed.
-	  
-	  
+
+
 
 2008-01-30 19:09  Ben Jubb <benjubb@refractions.net>
 
@@ -8505,7 +8505,7 @@
 	  bug in the shortcut test for containment in a rectangle. This
 	  test wasn't correctly testing for case of a point on the
 	  boundary.
-	  
+
 	  Was also a bug in JTS (now fixed).
 
 2008-01-29 17:37  Ben Jubb <benjubb@refractions.net>
@@ -8526,9 +8526,9 @@
 
 	* [r2109] source/index/chain/MonotoneChainBuilder.cpp: Fixed a bug
 	  in the handling of line strings with repeated points.
-	  
+
 	  -This line, and those below, will be ignored--
-	  
+
 	  M MonotoneChainBuilder.cpp
 
 2008-01-17 19:15  Ben Jubb <benjubb@refractions.net>
@@ -9107,7 +9107,7 @@
 
 	* [r2012] macros/ac_pkg_swig.m4: Fixes sed issue with swig on msys.
 	  For more info see:
-	  
+
 	  http://lists.refractions.net/pipermail/geos-devel/2007-August/002956.html
 
 2007-08-30 03:18  Charlie Savage <cfis@savagexi.com>
@@ -9385,12 +9385,12 @@
 	* [r1974] ChangeLog,
 	  source/operation/buffer/SubgraphDepthLocater.cpp: Patch by Carl
 	  Anderson:
-	  
+
 	  * source/operation/buffer/SubgraphDepthLocater.cpp
 	  (findStabbedSegments):
 	  Implement short-circuit to avoid inner defective
 	  logic.
-	  
+
 	  Fixes badguy3.xml
 
 2007-02-21 10:12  Sandro Santilli <strk@keybit.net>
@@ -9403,7 +9403,7 @@
 2007-02-08 23:33  Sandro Santilli <strk@keybit.net>
 
 	* [r1972] ChangeLog, configure.in: Patch by Mark Cave-Ayland:
-	  
+
 	  * configure.in: Allow configure to continue with use_python
 	  set to false if a python binary is not found, as per
 	  http://sources.redhat.com/automake/automake.html#Python.
@@ -9563,7 +9563,7 @@
 
 	* [r1954] ChangeLog, swig/geos.i: Patch by dev-zero at gentoo dot
 	  org:
-	  
+
 	  * swig/geos.i: use unsigned int when CAPI signatures
 	  expect unsigned int (not size_t).
 
@@ -9586,7 +9586,7 @@
 	* [r1951] ChangeLog, source/algorithm/HCoordinate.cpp,
 	  source/inlines.cpp: Applied patch by Mark Cave-Ayland
 	  <mark.cave-ayland@ilande.co.uk>:
-	  
+
 	  * source/inlines.cpp, source/algorithm/HCoordinate.cpp:
 	  Fixes for MingW builds. See geos-devel/2007-January/002766.html.
 
@@ -9833,7 +9833,7 @@
 2006-11-22 12:26  Sandro Santilli <strk@keybit.net>
 
 	* [r1918] ChangeLog, autogen.sh: Patch by dron@ak4719.spb.edu:
-	  
+
 	  * autogen.sh: call 'autoheader' after 'aclocal'.
 	  Fixes bug #131
 
@@ -9992,7 +9992,7 @@
 
 	* [r1888] ChangeLog, capi/geos_c.cpp, capi/geos_c.h.in: Patch by
 	  Markus Schaber <schabi@logix-tt.com>:
-	  
+
 	  * capi/geos_c.h.in: add GEOSGeometry and GEOSCoordSequence
 	  typedef, to unhide the pointer type and allow fine-grained
 	  const specification, use the new typedefs in function signatures
@@ -10004,7 +10004,7 @@
 
 	* [r1887] ChangeLog, capi/geos_c.cpp, capi/geos_c.h.in: Patch by
 	  Markus Schaber <schabi@logix-tt.com>
-	  
+
 	  * capi/geos_c.cpp: more focused 'using' directives.
 	  * capi/geos_c.h.in: let the enum visible by geos_c.cpp
 	  now that there are no more name clashes.
@@ -10045,7 +10045,7 @@
 	* [r1882] ChangeLog, capi/geos_c.cpp, capi/geos_c.h.in: Patch
 	  submitted by Markus Schaber <schabi@logix-tt.com> ( reviewed and
 	  fixed )
-	  
+
 	  * capi/: geos_c.cpp, geos_c.h.in:
 	  Changed the C-API implementation to actually include the header
 	  that's included by the clients, this allows the compiler to check
@@ -10067,7 +10067,7 @@
 	  source/headers/geos/operation/polygonize/Polygonizer.h,
 	  source/operation/polygonize/Polygonizer.cpp: Patch by Markus
 	  Schaber <schabi@logix-tt.com>
-	  
+
 	  * algorithm::InteriorPointLine (ctor): take Geometry by
 	  const-pointer.
 	  * geom::Geometry (getInteriorPoint): made a const-method
@@ -17806,7 +17806,7 @@
 	  instead. Provided a compile-time switch to
 	  make copy ctor and assignment operators non-inline
 	  to allow for more accurate profiling.
-	  
+
 	  Coordinate copies removal:
 	  NodeFactory::createNode() takes now a Coordinate reference
 	  rather then real value. This brings coordinate copies
@@ -17815,20 +17815,20 @@
 	  copies are 222198.
 	  Removed useless coordinate copies in ConvexHull
 	  operations
-	  
+
 	  STL containers heap allocations reduction:
 	  Converted many containers element from
 	  pointers to real objects.
 	  Made some use of .reserve() or size
 	  initialization when final container size is known
 	  in advance.
-	  
+
 	  Stateless classes allocations reduction:
 	  Provided ::instance() function for
 	  NodeFactories, to avoid allocating
 	  more then one (they are all
 	  stateless).
-	  
+
 	  HCoordinate improvements:
 	  Changed HCoordinate constructor by HCoordinates
 	  take reference rather then real objects.
@@ -24443,24 +24443,24 @@
 	  source/util/Makefile.in, tools, tools/Makefile.am,
 	  tools/Makefile.in, tools/geos-config.in: * Add automake/autoconf
 	  support for one-lib compilation
-	  
+
 	  * add libtool support for shared libraries.
 	  --enable-shared={yes|no} and
 	  --enable-static={yes|no} control static and shared lib
 	  generation.
-	  
+
 	  * Makefile.in and configure files added to cvs (for users without
 	  automake)
-	  
+
 	  * add dir macros/ with a GEOS_INIT macro to be used in
 	  configure.in
 	  of other packages using geos (not used by geos itself)
-	  
+
 	  * add dir tools/ with geos-config script
-	  
+
 	  * the makefile in source/geom is the only one that generates a
 	  library - all others have the source files in EXTRA_DIST only
-	  
+
 	  * small glitch: 'make dist' will give errors trying to add the
 	  source files non local to source/geom to the archive using
 	  relative

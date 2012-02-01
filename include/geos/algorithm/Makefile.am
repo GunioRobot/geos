@@ -1,5 +1,5 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
 SUBDIRS = \
     locate \
@@ -32,4 +32,4 @@ geos_HEADERS = \
     RayCrossingCounter.h \
     RobustDeterminant.h \
     SimplePointInRing.h \
-    SIRtreePointInRing.h     
+    SIRtreePointInRing.h

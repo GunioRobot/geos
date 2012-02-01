@@ -9,7 +9,7 @@
 #
 # This is free software; you can redistribute and/or modify it under
 # the terms of the GNU Lesser General Public Licence as published
-# by the Free Software Foundation. 
+# by the Free Software Foundation.
 # See the COPYING file for more information.
 #
 #######################################################################
@@ -86,7 +86,7 @@ while read line <&7; do
 		fi
 
 	fi
-		
+
 done
 
 testline="<op name='buffersinglesided' arg1='a' arg2='${arg2}' arg3='4' arg4='${style}'>|${opname}"

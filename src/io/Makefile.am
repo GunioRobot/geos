@@ -1,11 +1,11 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
 #SUBDIRS = markup
 
 noinst_LTLIBRARIES = libio.la
 
-INCLUDES = -I$(top_srcdir)/include 
+INCLUDES = -I$(top_srcdir)/include
 
 libio_la_SOURCES = \
 	ParseException.cpp \
@@ -20,4 +20,4 @@ libio_la_SOURCES = \
 	Unload.cpp \
 	CLocalizer.cpp
 
-libio_la_LIBADD = 
+libio_la_LIBADD =

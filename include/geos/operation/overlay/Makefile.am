@@ -1,9 +1,9 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
 SUBDIRS = snap
 
-#EXTRA_DIST = 
+#EXTRA_DIST =
 
 geosdir = $(includedir)/geos/operation/overlay
 
@@ -21,4 +21,4 @@ geos_HEADERS = \
     PolygonBuilder.h \
     validate/FuzzyPointLocator.h \
     validate/OffsetPointGenerator.h \
-    validate/OverlayResultValidator.h 
+    validate/OverlayResultValidator.h

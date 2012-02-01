@@ -9,7 +9,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  **********************************************************************
@@ -62,7 +62,7 @@ private:
 		double dyq=q->y-o->y;
 
 		int orient = CGAlgorithms::computeOrientation(*o, *p, *q);
-		
+
 
 		if (orient == CGAlgorithms::COUNTERCLOCKWISE) return 1;
 		if (orient == CGAlgorithms::CLOCKWISE) return -1;
@@ -96,10 +96,10 @@ public:
 CoordinateSequence *
 ConvexHull::toCoordinateSequence(Coordinate::ConstVect &cv)
 {
-	const CoordinateSequenceFactory *csf = 
+	const CoordinateSequenceFactory *csf =
 		geomFactory->getCoordinateSequenceFactory();
 
-	// Create a new Coordinate::Vect for feeding it to 
+	// Create a new Coordinate::Vect for feeding it to
 	// the CoordinateSequenceFactory
 	Coordinate::Vect *vect=new Coordinate::Vect();
 
@@ -160,13 +160,13 @@ ConvexHull::computeOctRing(const Coordinate::ConstVect &inputPts,
 	Coordinate::ConstVect &dest)
 {
 	computeOctPts(inputPts, dest);
-	
+
 	// Remove consecutive equal Coordinates
 	// unique() returns an iterator to the end of the resulting
 	// sequence, we erase from there to the end.
 	dest.erase( std::unique(dest.begin(),dest.end()), dest.end() );
 
-	// points must all lie in a line	
+	// points must all lie in a line
 	if ( dest.size() < 3 ) return false;
 
 	// close ring
@@ -229,7 +229,7 @@ ConvexHull::getConvexHull()
 	if (nInputPts==0) // Return an empty geometry
 		return geomFactory->createEmptyGeometry();
 
-	if (nInputPts==1) // Return a Point 
+	if (nInputPts==1) // Return a Point
 	{
 		// Copy the Coordinate from the ConstVect
 		return geomFactory->createPoint(*(inputPts[0]));
@@ -284,7 +284,7 @@ ConvexHull::preSort(Coordinate::ConstVect &pts)
 
 /*private*/
 void
-ConvexHull::grahamScan(const Coordinate::ConstVect &c, 
+ConvexHull::grahamScan(const Coordinate::ConstVect &c,
 		Coordinate::ConstVect &ps)
 {
 	ps.push_back(c[0]);
@@ -294,7 +294,7 @@ ConvexHull::grahamScan(const Coordinate::ConstVect &c,
 	for(size_t i=3, n=c.size(); i<n; ++i)
 	{
 		const Coordinate *p = ps.back(); ps.pop_back();
-		while (!ps.empty() && 
+		while (!ps.empty() &&
 			CGAlgorithms::computeOrientation(
 		    *(ps.back()), *p, *(c[i])) > 0)
 		{
@@ -405,7 +405,7 @@ ConvexHull::grahamScan(const Coordinate::ConstVect &c,
 //	}
 //}
 
- 
+
 
 /*private*/
 bool
@@ -538,7 +538,7 @@ ConvexHull::cleanRing(const Coordinate::ConstVect &original,
 //		if (currentCoordinate==nextCoordinate) continue;
 //
 //		// skip collinear point
-//		if (previousDistinctCoordinate!=NULL && 
+//		if (previousDistinctCoordinate!=NULL &&
 //			isBetween(*previousDistinctCoordinate, currentCoordinate, nextCoordinate))
 //		{
 //			continue;

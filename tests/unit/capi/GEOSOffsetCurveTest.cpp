@@ -1,4 +1,4 @@
-// 
+//
 // Test Suite for C-API GEOSOffsetCurve
 
 #include <tut.hpp>
@@ -33,7 +33,7 @@ namespace tut
             va_start(ap, fmt);
             std::vfprintf(stdout, fmt, ap);
             va_end(ap);
-        
+
             std::fprintf(stdout, "\n");
         }
 
@@ -43,7 +43,7 @@ namespace tut
             initGEOS(notice, notice);
             wktw_ = GEOSWKTWriter_create();
             GEOSWKTWriter_setTrim(wktw_, 1);
-        }       
+        }
 
         ~test_capioffsetcurve_data()
         {

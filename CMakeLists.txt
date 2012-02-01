@@ -6,7 +6,7 @@
 #
 # This is free software; you can redistribute and/or modify it under
 # the terms of the GNU Lesser General Public Licence as published
-# by the Free Software Foundation. 
+# by the Free Software Foundation.
 # See the COPYING file for more information.
 #
 #################################################################################
@@ -59,7 +59,7 @@ option(GEOS_ENABLE_INLINE
 
 if(NOT MSVC)
   option(GEOS_ENABLE_ASSERT
-    "Set to ON|OFF (default) to build GEOS with assert() macro enabled" OFF) 
+    "Set to ON|OFF (default) to build GEOS with assert() macro enabled" OFF)
 endif()
 
 if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
@@ -113,7 +113,7 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
   set(CMAKE_REQUIRED_DEFINITIONS "${CMAKE_REQUIRED_DEFINITIONS} -D_ISOC99_SOURCE=1")
 
 elseif(MSVC)
-    
+
   # Set pedantic mode by default
   #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
   string(REGEX REPLACE "/W[0-9]" "/W4" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
@@ -128,7 +128,7 @@ elseif(MSVC)
       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
     endif()
     message(STATUS "Setting Visual Studio 2005+ option /MP to ${GEOS_MSVC_ENABLE_MP}")
-    
+
     add_definitions(-D_SCL_SECURE_NO_WARNINGS)
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
     add_definitions(-DNOMINMAX)
@@ -251,7 +251,7 @@ if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include/geos/platform.h)
   message(STATUS "Disabling existing ${CMAKE_CURRENT_SOURCE_DIR}/include/geos/platform.h - ${PH_RESULT}")
 endif()
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/geos/platform.h.cmake 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/geos/platform.h.cmake
   ${CMAKE_CURRENT_BINARY_DIR}/include/geos/platform.h)
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/include/geos/version.h.in
@@ -294,7 +294,7 @@ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in"
   IMMEDIATE @ONLY)
 
 add_custom_target(uninstall
-  "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake/cmake_uninstall.cmake") 
+  "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake/cmake_uninstall.cmake")
 
 #################################################################################
 # DEBUG settings - TODO: make a summary

@@ -1,5 +1,5 @@
 #######################################################################
-# 
+#
 #    GEOS - Geometry Engine Open Source
 #    http://trac.osgeo.org/geos
 #
@@ -38,8 +38,8 @@ if HAVE_PHP_UNIT
 
 TESTS = phpunit
 
-phpunit: test.php 
-	echo "#!/bin/sh" > $@ 
+phpunit: test.php
+	echo "#!/bin/sh" > $@
 	echo "$(PHP) $(PHPOPTS) $(PHPUNIT) test $(abs_srcdir)/test.php $$@" >> $@
 	chmod +x $@
 

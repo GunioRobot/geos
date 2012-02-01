@@ -1,11 +1,11 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
-SUBDIRS = 
+SUBDIRS =
 
 noinst_LTLIBRARIES = libplanargraph.la
 
-INCLUDES = -I$(top_srcdir)/include 
+INCLUDES = -I$(top_srcdir)/include
 
 libplanargraph_la_SOURCES = \
     DirectedEdge.cpp \
@@ -17,4 +17,4 @@ libplanargraph_la_SOURCES = \
     Subgraph.cpp \
     algorithm/ConnectedSubgraphFinder.cpp
 
-libplanargraph_la_LIBADD = 
+libplanargraph_la_LIBADD =

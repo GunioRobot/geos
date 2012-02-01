@@ -8,7 +8,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  * Author: Sandro Santilli <strk@keybit.net>
@@ -17,24 +17,24 @@
  ***********************************************************************/
 
 #include <geos/platform.h>  // for FINITE
-#include <geos/geom/Geometry.h> 
-#include <geos/geom/prep/PreparedGeometry.h> 
-#include <geos/geom/prep/PreparedGeometryFactory.h> 
-#include <geos/geom/GeometryCollection.h> 
-#include <geos/geom/Polygon.h> 
-#include <geos/geom/Point.h> 
-#include <geos/geom/MultiPoint.h> 
-#include <geos/geom/MultiLineString.h> 
-#include <geos/geom/MultiPolygon.h> 
-#include <geos/geom/LinearRing.h> 
-#include <geos/geom/LineString.h> 
-#include <geos/geom/PrecisionModel.h> 
-#include <geos/geom/GeometryFactory.h> 
-#include <geos/geom/CoordinateSequenceFactory.h> 
-#include <geos/geom/Coordinate.h> 
-#include <geos/geom/IntersectionMatrix.h> 
-#include <geos/geom/Envelope.h> 
-#include <geos/index/strtree/STRtree.h> 
+#include <geos/geom/Geometry.h>
+#include <geos/geom/prep/PreparedGeometry.h>
+#include <geos/geom/prep/PreparedGeometryFactory.h>
+#include <geos/geom/GeometryCollection.h>
+#include <geos/geom/Polygon.h>
+#include <geos/geom/Point.h>
+#include <geos/geom/MultiPoint.h>
+#include <geos/geom/MultiLineString.h>
+#include <geos/geom/MultiPolygon.h>
+#include <geos/geom/LinearRing.h>
+#include <geos/geom/LineString.h>
+#include <geos/geom/PrecisionModel.h>
+#include <geos/geom/GeometryFactory.h>
+#include <geos/geom/CoordinateSequenceFactory.h>
+#include <geos/geom/Coordinate.h>
+#include <geos/geom/IntersectionMatrix.h>
+#include <geos/geom/Envelope.h>
+#include <geos/index/strtree/STRtree.h>
 #include <geos/index/ItemVisitor.h>
 #include <geos/io/WKTReader.h>
 #include <geos/io/WKBReader.h>
@@ -60,7 +60,7 @@
 #include <geos/util/IllegalArgumentException.h>
 #include <geos/util/UniqueCoordinateArrayFilter.h>
 #include <geos/util/Machine.h>
-#include <geos/version.h> 
+#include <geos/version.h>
 
 // This should go away
 #include <cmath> // finite
@@ -78,7 +78,7 @@
 #pragma warning(disable : 4099)
 #endif
 
-// Some extra magic to make type declarations in geos_c.h work - 
+// Some extra magic to make type declarations in geos_c.h work -
 // for cross-checking of types in header.
 #define GEOSGeometry geos::geom::Geometry
 #define GEOSPreparedGeometry geos::geom::prep::PreparedGeometry
@@ -167,7 +167,7 @@ char* gstrdup_s(const char* str, const std::size_t size)
     }
 
     assert(0 != out);
-    
+
     // we haven't been checking allocation before ticket #371
     if (0 == out)
     {
@@ -249,13 +249,13 @@ finishGEOS_r(GEOSContextHandle_t extHandle)
     extHandle = NULL;
 }
 
-void 
-GEOSFree_r (GEOSContextHandle_t extHandle, void* buffer) 
-{ 
+void
+GEOSFree_r (GEOSContextHandle_t extHandle, void* buffer)
+{
     assert(0 != extHandle);
 
-    std::free(buffer); 
-} 
+    std::free(buffer);
+}
 
 //-----------------------------------------------------------
 // relate()-related functions
@@ -326,7 +326,7 @@ GEOSTouches_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geometry 
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -358,7 +358,7 @@ GEOSIntersects_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geomet
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -390,7 +390,7 @@ GEOSCrosses_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geometry 
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -422,7 +422,7 @@ GEOSWithin_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geometry *
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -458,7 +458,7 @@ GEOSContains_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geometry
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -490,7 +490,7 @@ GEOSOverlaps_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geometry
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -522,7 +522,7 @@ GEOSCovers_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geometry *
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -554,7 +554,7 @@ GEOSCoveredBy_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geometr
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -592,7 +592,7 @@ GEOSRelatePattern_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geo
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -631,7 +631,7 @@ GEOSRelatePatternMatch_r(GEOSContextHandle_t extHandle, const char *mat,
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -659,7 +659,7 @@ GEOSRelate_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geometry *
         {
             return 0;
         }
-       
+
         char *result = gstrdup(im->toString());
 
         delete im;
@@ -675,7 +675,7 @@ GEOSRelate_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geometry *
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -725,7 +725,7 @@ GEOSRelateBoundaryNodeRule_r(GEOSContextHandle_t extHandle, const Geometry *g1, 
         }
 
         if (0 == im) return 0;
-       
+
         char *result = gstrdup(im->toString());
 
         delete im;
@@ -741,7 +741,7 @@ GEOSRelateBoundaryNodeRule_r(GEOSContextHandle_t extHandle, const Geometry *g1, 
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -792,7 +792,7 @@ GEOSisValid_r(GEOSContextHandle_t extHandle, const Geometry *g1)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -969,7 +969,7 @@ GEOSEqualsExact_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geome
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -1003,7 +1003,7 @@ GEOSDistance_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geometry
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -1037,7 +1037,7 @@ GEOSHausdorffDistance_r(GEOSContextHandle_t extHandle, const Geometry *g1, const
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -1071,7 +1071,7 @@ GEOSHausdorffDistanceDensify_r(GEOSContextHandle_t extHandle, const Geometry *g1
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -1105,7 +1105,7 @@ GEOSArea_r(GEOSContextHandle_t extHandle, const Geometry *g, double *area)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -1139,7 +1139,7 @@ GEOSLength_r(GEOSContextHandle_t extHandle, const Geometry *g, double *length)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -1174,7 +1174,7 @@ GEOSGeomFromWKT_r(GEOSContextHandle_t extHandle, const char *wkt)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -1255,7 +1255,7 @@ GEOSGeomToWKB_buf_r(GEOSContextHandle_t extHandle, const Geometry *g, size_t *si
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-   
+
     return NULL;
 }
 
@@ -1293,7 +1293,7 @@ GEOSGeomFromWKB_buf_r(GEOSContextHandle_t extHandle, const unsigned char *wkb, s
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -1339,7 +1339,7 @@ GEOSGeomToHEX_buf_r(GEOSContextHandle_t extHandle, const Geometry *g, size_t *si
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -1378,7 +1378,7 @@ GEOSGeomFromHEX_buf_r(GEOSContextHandle_t extHandle, const unsigned char *hex, s
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -1409,7 +1409,7 @@ GEOSisEmpty_r(GEOSContextHandle_t extHandle, const Geometry *g1)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -1515,7 +1515,7 @@ GEOSGeomType_r(GEOSContextHandle_t extHandle, const Geometry *g1)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -1547,7 +1547,7 @@ GEOSGeomTypeId_r(GEOSContextHandle_t extHandle, const Geometry *g1)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return -1;
 }
 
@@ -1583,7 +1583,7 @@ GEOSEnvelope_r(GEOSContextHandle_t extHandle, const Geometry *g1)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -1619,7 +1619,7 @@ GEOSIntersection_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geom
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -1651,7 +1651,7 @@ GEOSBuffer_r(GEOSContextHandle_t extHandle, const Geometry *g1, double width, in
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -1707,7 +1707,7 @@ GEOSBufferWithStyle_r(GEOSContextHandle_t extHandle, const Geometry *g1, double 
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -1753,7 +1753,7 @@ GEOSOffsetCurve_r(GEOSContextHandle_t extHandle, const Geometry *g1, double widt
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -1796,7 +1796,7 @@ GEOSSingleSidedBuffer_r(GEOSContextHandle_t extHandle, const Geometry *g1, doubl
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -1828,7 +1828,7 @@ GEOSConvexHull_r(GEOSContextHandle_t extHandle, const Geometry *g1)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -1864,7 +1864,7 @@ GEOSDifference_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geomet
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -1896,7 +1896,7 @@ GEOSBoundary_r(GEOSContextHandle_t extHandle, const Geometry *g1)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -1962,7 +1962,7 @@ GEOSUnion_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geometry *g
     catch (const std::exception &e)
     {
 #if VERBOSE_EXCEPTIONS
-        std::ostringstream s; 
+        std::ostringstream s;
         s << "Exception on GEOSUnion with following inputs:" << std::endl;
         s << "A: "<<g1->toString() << std::endl;
         s << "B: "<<g2->toString() << std::endl;
@@ -1974,7 +1974,7 @@ GEOSUnion_r(GEOSContextHandle_t extHandle, const Geometry *g1, const Geometry *g
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -2001,7 +2001,7 @@ GEOSUnaryUnion_r(GEOSContextHandle_t extHandle, const Geometry *g)
     catch (const std::exception &e)
     {
 #if VERBOSE_EXCEPTIONS
-        std::ostringstream s; 
+        std::ostringstream s;
         s << "Exception on GEOSUnaryUnion with following inputs:" << std::endl;
         s << "A: "<<g1->toString() << std::endl;
         s << "B: "<<g2->toString() << std::endl;
@@ -2013,7 +2013,7 @@ GEOSUnaryUnion_r(GEOSContextHandle_t extHandle, const Geometry *g)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -2035,7 +2035,7 @@ GEOSUnionCascaded_r(GEOSContextHandle_t extHandle, const Geometry *g1)
     try
     {
         const geos::geom::MultiPolygon *p = dynamic_cast<const geos::geom::MultiPolygon *>(g1);
-        if ( ! p ) 
+        if ( ! p )
         {
             handle->ERROR_MESSAGE("Invalid argument (must be a MultiPolygon)");
             return NULL;
@@ -2052,7 +2052,7 @@ GEOSUnionCascaded_r(GEOSContextHandle_t extHandle, const Geometry *g1)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -2077,7 +2077,7 @@ GEOSPointOnSurface_r(GEOSContextHandle_t extHandle, const Geometry *g1)
         if ( ! ret )
         {
             const GeometryFactory* gf = handle->geomFactory;
-            // return an empty collection 
+            // return an empty collection
             return gf->createGeometryCollection();
         }
         return ret;
@@ -2090,7 +2090,7 @@ GEOSPointOnSurface_r(GEOSContextHandle_t extHandle, const Geometry *g1)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -2103,7 +2103,7 @@ GEOSGeom_destroy_r(GEOSContextHandle_t extHandle, Geometry *a)
 {
     GEOSContextHandleInternal_t *handle = 0;
 
-    // FIXME: mloskot: Does this try-catch around delete means that 
+    // FIXME: mloskot: Does this try-catch around delete means that
     // destructors in GEOS may throw? If it does, this is a serious
     // violation of "never throw an exception from a destructor" principle
 
@@ -2193,12 +2193,12 @@ GEOSGetNumCoordinates_r(GEOSContextHandle_t extHandle, const Geometry *g)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return -1;
 }
 
 /*
- * Return -1 on exception, 0 otherwise. 
+ * Return -1 on exception, 0 otherwise.
  * Converts Geometry to normal form (or canonical form).
  */
 int
@@ -2231,7 +2231,7 @@ GEOSNormalize_r(GEOSContextHandle_t extHandle, Geometry *g)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return -1;
 }
 
@@ -2268,7 +2268,7 @@ GEOSGetNumInteriorRings_r(GEOSContextHandle_t extHandle, const Geometry *g1)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return -1;
 }
 
@@ -2301,7 +2301,7 @@ GEOSGetNumGeometries_r(GEOSContextHandle_t extHandle, const Geometry *g1)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return -1;
 }
 
@@ -2337,7 +2337,7 @@ GEOSGetGeometryN_r(GEOSContextHandle_t extHandle, const Geometry *g1, int n)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -2699,7 +2699,7 @@ GEOSGetExteriorRing_r(GEOSContextHandle_t extHandle, const Geometry *g1)
     try
     {
         const Polygon *p = dynamic_cast<const Polygon *>(g1);
-        if ( ! p ) 
+        if ( ! p )
         {
             handle->ERROR_MESSAGE("Invalid argument (must be a Polygon)");
             return NULL;
@@ -2714,7 +2714,7 @@ GEOSGetExteriorRing_r(GEOSContextHandle_t extHandle, const Geometry *g1)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -2740,7 +2740,7 @@ GEOSGetInteriorRingN_r(GEOSContextHandle_t extHandle, const Geometry *g1, int n)
     try
     {
         const Polygon *p = dynamic_cast<const Polygon *>(g1);
-        if ( ! p ) 
+        if ( ! p )
         {
             handle->ERROR_MESSAGE("Invalid argument (must be a Polygon)");
             return NULL;
@@ -2755,7 +2755,7 @@ GEOSGetInteriorRingN_r(GEOSContextHandle_t extHandle, const Geometry *g1, int n)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -2792,7 +2792,7 @@ GEOSGetCentroid_r(GEOSContextHandle_t extHandle, const Geometry *g)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -2815,7 +2815,7 @@ GEOSGeom_createEmptyCollection_r(GEOSContextHandle_t extHandle, int type)
     char buf[256];
     sprintf(buf, "createCollection: requested type %d, ngeoms: %d",
             type, ngeoms);
-    handle->NOTICE_MESSAGE("%s", buf);// TODO: Can handle->NOTICE_MESSAGE format that directly? 
+    handle->NOTICE_MESSAGE("%s", buf);// TODO: Can handle->NOTICE_MESSAGE format that directly?
 #endif
 
     try
@@ -2840,9 +2840,9 @@ GEOSGeom_createEmptyCollection_r(GEOSContextHandle_t extHandle, int type)
             default:
                 handle->ERROR_MESSAGE("Unsupported type request for GEOSGeom_createEmptyCollection_r");
                 g = 0;
-                
+
         }
-        
+
         return g;
     }
     catch (const std::exception &e)
@@ -2876,7 +2876,7 @@ GEOSGeom_createCollection_r(GEOSContextHandle_t extHandle, int type, Geometry **
     char buf[256];
     sprintf(buf, "PostGIS2GEOS_collection: requested type %d, ngeoms: %d",
             type, ngeoms);
-    handle->NOTICE_MESSAGE("%s", buf);// TODO: Can handle->NOTICE_MESSAGE format that directly? 
+    handle->NOTICE_MESSAGE("%s", buf);// TODO: Can handle->NOTICE_MESSAGE format that directly?
 #endif
 
     try
@@ -2902,9 +2902,9 @@ GEOSGeom_createCollection_r(GEOSContextHandle_t extHandle, int type, Geometry **
             default:
                 handle->ERROR_MESSAGE("Unsupported type request for PostGIS2GEOS_collection");
                 g = 0;
-                
+
         }
-        
+
         return g;
     }
     catch (const std::exception &e)
@@ -2967,7 +2967,7 @@ GEOSPolygonize_r(GEOSContextHandle_t extHandle, const Geometry * const * g, unsi
         // or add a wrapper which semantic is similar to:
         // std::vector<as_polygon<Geometry*> >
         std::vector<Geometry*> *polyvec = new std::vector<Geometry *>(polys->size());
-        
+
         for (std::size_t i = 0; i < polys->size(); ++i)
         {
             (*polyvec)[i] = (*polys)[i];
@@ -3241,7 +3241,7 @@ GEOSGetSRID_r(GEOSContextHandle_t extHandle, const Geometry *g)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -3255,7 +3255,7 @@ const char* GEOSjtsport()
     return GEOS_JTS_PORT;
 }
 
-char 
+char
 GEOSHasZ_r(GEOSContextHandle_t extHandle, const Geometry *g)
 {
     assert(0 != g);
@@ -3396,7 +3396,7 @@ GEOSCoordSeq_create_r(GEOSContextHandle_t extHandle, unsigned int size, unsigned
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -3430,7 +3430,7 @@ GEOSCoordSeq_setOrdinate_r(GEOSContextHandle_t extHandle, CoordinateSequence *cs
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -3481,7 +3481,7 @@ GEOSCoordSeq_clone_r(GEOSContextHandle_t extHandle, const CoordinateSequence *cs
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -3519,7 +3519,7 @@ GEOSCoordSeq_getOrdinate_r(GEOSContextHandle_t extHandle, const CoordinateSequen
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -3573,7 +3573,7 @@ GEOSCoordSeq_getSize_r(GEOSContextHandle_t extHandle, const CoordinateSequence *
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -3611,7 +3611,7 @@ GEOSCoordSeq_getDimensions_r(GEOSContextHandle_t extHandle, const CoordinateSequ
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -3682,7 +3682,7 @@ GEOSGeom_getCoordSeq_r(GEOSContextHandle_t extHandle, const Geometry *g)
         }
 
         const Point *p = dynamic_cast<const Point *>(g);
-        if ( p ) 
+        if ( p )
         {
             return p->getCoordinatesRO();
         }
@@ -3698,7 +3698,7 @@ GEOSGeom_getCoordSeq_r(GEOSContextHandle_t extHandle, const Geometry *g)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -3730,7 +3730,7 @@ GEOSGeom_createEmptyPoint_r(GEOSContextHandle_t extHandle)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -3750,7 +3750,7 @@ GEOSGeom_createPoint_r(GEOSContextHandle_t extHandle, CoordinateSequence *cs)
     }
 
     try
-    { 
+    {
         const GeometryFactory *gf = handle->geomFactory;
         return gf->createPoint(cs);
     }
@@ -3782,7 +3782,7 @@ GEOSGeom_createLinearRing_r(GEOSContextHandle_t extHandle, CoordinateSequence *c
     }
 
     try
-    { 
+    {
         const GeometryFactory *gf = handle->geomFactory;
 
         return gf->createLinearRing(cs);
@@ -3795,7 +3795,7 @@ GEOSGeom_createLinearRing_r(GEOSContextHandle_t extHandle, CoordinateSequence *c
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -3815,7 +3815,7 @@ GEOSGeom_createEmptyLineString_r(GEOSContextHandle_t extHandle)
     }
 
     try
-    { 
+    {
         const GeometryFactory *gf = handle->geomFactory;
 
         return gf->createLineString();
@@ -3828,7 +3828,7 @@ GEOSGeom_createEmptyLineString_r(GEOSContextHandle_t extHandle)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -3848,7 +3848,7 @@ GEOSGeom_createLineString_r(GEOSContextHandle_t extHandle, CoordinateSequence *c
     }
 
     try
-    { 
+    {
         const GeometryFactory *gf = handle->geomFactory;
 
         return gf->createLineString(cs);
@@ -3861,7 +3861,7 @@ GEOSGeom_createLineString_r(GEOSContextHandle_t extHandle, CoordinateSequence *c
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -3893,7 +3893,7 @@ GEOSGeom_createEmptyPolygon_r(GEOSContextHandle_t extHandle)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -3918,7 +3918,7 @@ GEOSGeom_createPolygon_r(GEOSContextHandle_t extHandle, Geometry *shell, Geometr
     try
     {
         using geos::geom::LinearRing;
-        
+
         std::vector<Geometry *> *vholes = new std::vector<Geometry *>(holes, holes + nholes);
 
         LinearRing *nshell = dynamic_cast<LinearRing *>(shell);
@@ -3939,7 +3939,7 @@ GEOSGeom_createPolygon_r(GEOSContextHandle_t extHandle, Geometry *shell, Geometr
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -3972,7 +3972,7 @@ GEOSGeom_clone_r(GEOSContextHandle_t extHandle, const Geometry *g)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -4003,7 +4003,7 @@ GEOSGeom_getDimensions_r(GEOSContextHandle_t extHandle, const Geometry *g)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -4034,7 +4034,7 @@ GEOSGeom_getCoordinateDimension_r(GEOSContextHandle_t extHandle, const Geometry 
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -4067,7 +4067,7 @@ GEOSSimplify_r(GEOSContextHandle_t extHandle, const Geometry *g1, double toleran
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -4100,7 +4100,7 @@ GEOSTopologyPreserveSimplify_r(GEOSContextHandle_t extHandle, const Geometry *g1
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -4134,7 +4134,7 @@ GEOSWKTReader_create_r(GEOSContextHandle_t extHandle)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -4211,7 +4211,7 @@ GEOSWKTReader_read_r(GEOSContextHandle_t extHandle, WKTReader *reader, const cha
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -4244,7 +4244,7 @@ GEOSWKTWriter_create_r(GEOSContextHandle_t extHandle)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -4322,7 +4322,7 @@ GEOSWKTWriter_write_r(GEOSContextHandle_t extHandle, WKTWriter *writer, const Ge
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -4481,7 +4481,7 @@ GEOSWKBReader_create_r(GEOSContextHandle_t extHandle)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -4551,7 +4551,7 @@ GEOSWKBReader_read_r(GEOSContextHandle_t extHandle, WKBReader *reader, const uns
         std::istringstream is(std::ios_base::binary);
         is.str(wkbstring);
         is.seekg(0, std::ios::beg); // rewind reader pointer
-        
+
         Geometry *g = reader->read(is);
         return g;
     }
@@ -4563,7 +4563,7 @@ GEOSWKBReader_read_r(GEOSContextHandle_t extHandle, WKBReader *reader, const uns
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -4572,7 +4572,7 @@ GEOSWKBReader_readHEX_r(GEOSContextHandle_t extHandle, WKBReader *reader, const 
 {
     assert(0 != reader);
     assert(0 != hex);
-    
+
     if ( 0 == extHandle )
     {
         return 0;
@@ -4587,7 +4587,7 @@ GEOSWKBReader_readHEX_r(GEOSContextHandle_t extHandle, WKBReader *reader, const 
 
     try
     {
-        std::string hexstring(reinterpret_cast<const char*>(hex), size); 
+        std::string hexstring(reinterpret_cast<const char*>(hex), size);
         std::istringstream is(std::ios_base::binary);
         is.str(hexstring);
         is.seekg(0, std::ios::beg); // rewind reader pointer
@@ -4603,7 +4603,7 @@ GEOSWKBReader_readHEX_r(GEOSContextHandle_t extHandle, WKBReader *reader, const 
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 0;
 }
 
@@ -4636,7 +4636,7 @@ GEOSWKBWriter_create_r(GEOSContextHandle_t extHandle)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 
@@ -4775,7 +4775,7 @@ int
 GEOSWKBWriter_getOutputDimension_r(GEOSContextHandle_t extHandle, const GEOSWKBWriter* writer)
 {
     assert(0 != writer);
-    
+
     if ( 0 == extHandle )
     {
         return 0;
@@ -4914,7 +4914,7 @@ GEOSWKBWriter_getIncludeSRID_r(GEOSContextHandle_t extHandle, const GEOSWKBWrite
             handle->ERROR_MESSAGE("Unknown exception thrown");
         }
     }
-    
+
     return static_cast<char>(ret);
 }
 
@@ -4945,7 +4945,7 @@ GEOSWKBWriter_setIncludeSRID_r(GEOSContextHandle_t extHandle, GEOSWKBWriter* wri
 
 
 //-----------------------------------------------------------------
-// Prepared Geometry 
+// Prepared Geometry
 //-----------------------------------------------------------------
 
 const geos::geom::prep::PreparedGeometry*
@@ -4977,7 +4977,7 @@ GEOSPrepare_r(GEOSContextHandle_t extHandle, const Geometry *g)
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return prep;
 }
 
@@ -5041,7 +5041,7 @@ GEOSPreparedContains_r(GEOSContextHandle_t extHandle,
         return 2;
     }
 
-    try 
+    try
     {
         bool result = pg->contains(g);
         return result;
@@ -5054,7 +5054,7 @@ GEOSPreparedContains_r(GEOSContextHandle_t extHandle,
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -5077,7 +5077,7 @@ GEOSPreparedContainsProperly_r(GEOSContextHandle_t extHandle,
         return 2;
     }
 
-    try 
+    try
     {
         bool result = pg->containsProperly(g);
         return result;
@@ -5090,7 +5090,7 @@ GEOSPreparedContainsProperly_r(GEOSContextHandle_t extHandle,
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -5113,7 +5113,7 @@ GEOSPreparedCoveredBy_r(GEOSContextHandle_t extHandle,
         return 2;
     }
 
-    try 
+    try
     {
         bool result = pg->coveredBy(g);
         return result;
@@ -5126,7 +5126,7 @@ GEOSPreparedCoveredBy_r(GEOSContextHandle_t extHandle,
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -5149,7 +5149,7 @@ GEOSPreparedCovers_r(GEOSContextHandle_t extHandle,
         return 2;
     }
 
-    try 
+    try
     {
         bool result = pg->covers(g);
         return result;
@@ -5162,7 +5162,7 @@ GEOSPreparedCovers_r(GEOSContextHandle_t extHandle,
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -5185,7 +5185,7 @@ GEOSPreparedCrosses_r(GEOSContextHandle_t extHandle,
         return 2;
     }
 
-    try 
+    try
     {
         bool result = pg->crosses(g);
         return result;
@@ -5198,7 +5198,7 @@ GEOSPreparedCrosses_r(GEOSContextHandle_t extHandle,
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -5221,7 +5221,7 @@ GEOSPreparedDisjoint_r(GEOSContextHandle_t extHandle,
         return 2;
     }
 
-    try 
+    try
     {
         bool result = pg->disjoint(g);
         return result;
@@ -5234,7 +5234,7 @@ GEOSPreparedDisjoint_r(GEOSContextHandle_t extHandle,
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -5257,7 +5257,7 @@ GEOSPreparedIntersects_r(GEOSContextHandle_t extHandle,
         return 2;
     }
 
-    try 
+    try
     {
         bool result = pg->intersects(g);
         return result;
@@ -5270,7 +5270,7 @@ GEOSPreparedIntersects_r(GEOSContextHandle_t extHandle,
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -5293,7 +5293,7 @@ GEOSPreparedOverlaps_r(GEOSContextHandle_t extHandle,
         return 2;
     }
 
-    try 
+    try
     {
         bool result = pg->overlaps(g);
         return result;
@@ -5306,7 +5306,7 @@ GEOSPreparedOverlaps_r(GEOSContextHandle_t extHandle,
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -5329,7 +5329,7 @@ GEOSPreparedTouches_r(GEOSContextHandle_t extHandle,
         return 2;
     }
 
-    try 
+    try
     {
         bool result = pg->touches(g);
         return result;
@@ -5342,7 +5342,7 @@ GEOSPreparedTouches_r(GEOSContextHandle_t extHandle,
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -5365,7 +5365,7 @@ GEOSPreparedWithin_r(GEOSContextHandle_t extHandle,
         return 2;
     }
 
-    try 
+    try
     {
         bool result = pg->within(g);
         return result;
@@ -5378,7 +5378,7 @@ GEOSPreparedWithin_r(GEOSContextHandle_t extHandle,
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -5416,7 +5416,7 @@ GEOSSTRtree_create_r(GEOSContextHandle_t extHandle,
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return tree;
 }
 
@@ -5466,7 +5466,7 @@ GEOSSTRtree_insert_r(GEOSContextHandle_t extHandle,
     }
 }
 
-void 
+void
 GEOSSTRtree_query_r(GEOSContextHandle_t extHandle,
                     geos::index::strtree::STRtree *tree,
                     const geos::geom::Geometry *g,
@@ -5515,7 +5515,7 @@ GEOSSTRtree_query_r(GEOSContextHandle_t extHandle,
     }
 }
 
-void 
+void
 GEOSSTRtree_iterate_r(GEOSContextHandle_t extHandle,
                     geos::index::strtree::STRtree *tree,
                     GEOSQueryCallback callback,
@@ -5583,7 +5583,7 @@ GEOSSTRtree_remove_r(GEOSContextHandle_t extHandle,
         return 2;
     }
 
-    try 
+    try
     {
         bool result = tree->remove(g->getEnvelopeInternal(), item);
         return result;
@@ -5596,7 +5596,7 @@ GEOSSTRtree_remove_r(GEOSContextHandle_t extHandle,
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return 2;
 }
 
@@ -5648,7 +5648,7 @@ GEOSProject_r(GEOSContextHandle_t extHandle,
               const Geometry *p)
 {
     if ( 0 == extHandle ) return -1.0;
-    GEOSContextHandleInternal_t *handle = 
+    GEOSContextHandleInternal_t *handle =
         reinterpret_cast<GEOSContextHandleInternal_t*>(extHandle);
     if ( handle->initialized == 0 ) return -1.0;
 
@@ -5676,7 +5676,7 @@ Geometry*
 GEOSInterpolate_r(GEOSContextHandle_t extHandle, const Geometry *g, double d)
 {
     if ( 0 == extHandle ) return 0;
-    GEOSContextHandleInternal_t *handle = 
+    GEOSContextHandleInternal_t *handle =
         reinterpret_cast<GEOSContextHandleInternal_t*>(extHandle);
     if ( handle->initialized == 0 ) return 0;
 
@@ -5815,7 +5815,7 @@ GEOSSharedPaths_r(GEOSContextHandle_t extHandle, const GEOSGeometry* g1, const G
     SharedPathsOp::PathList forw, back;
     try {
       SharedPathsOp::sharedPathsOp(*g1, *g2, forw, back);
-    } 
+    }
     catch (const std::exception &e)
     {
         SharedPathsOp::clearEdges(forw);
@@ -5934,7 +5934,7 @@ void
 GEOSBufferParams_destroy_r(GEOSContextHandle_t extHandle, BufferParameters* p)
 {
   (void)extHandle;
-  delete p;     
+  delete p;
 }
 
 int
@@ -6104,7 +6104,7 @@ GEOSBufferWithParams_r(GEOSContextHandle_t extHandle, const Geometry *g1, const 
     {
         handle->ERROR_MESSAGE("Unknown exception thrown");
     }
-    
+
     return NULL;
 }
 

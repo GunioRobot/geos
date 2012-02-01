@@ -50,19 +50,19 @@ config.status: configure
 build: build-stamp
 build-stamp:  config.status
 	dh_testdir
-	
+
 	# Add here commands to compile the package.
 	$(MAKE)
 	$(MAKE) check
-	
+
 	touch build-stamp
 
 clean:
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp 
+	rm -f build-stamp
 	rm -f debian/shlibs.local
-	
+
 	# Add here commands to clean up after the build process.
 	-$(MAKE) distclean
 ifneq "$(wildcard /usr/share/misc/config.sub)" ""
@@ -71,15 +71,15 @@ endif
 ifneq "$(wildcard /usr/share/misc/config.guess)" ""
 	cp -f /usr/share/misc/config.guess config.guess
 endif
-	
-	dh_clean 
+
+	dh_clean
 
 install: build
 	dh_testdir
 	dh_testroot
-	dh_clean -k 
+	dh_clean -k
 	dh_installdirs
-	
+
 	# Add here commands to install the package into debian/tmp
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
 	$(MAKE) installcheck DESTDIR=$(CURDIR)/debian/tmp
@@ -101,7 +101,7 @@ binary-arch: build install
 	dh_movefiles --sourcedir=debian/tmp #woody uses wildcards in pkg.files
 #	dh_install --sourcedir=$(CURDIR)debian/tmp #woody doesn't use wildcards
 #	dh_installmenu
-#	dh_installdebconf	
+#	dh_installdebconf
 #	dh_installlogrotate
 #	dh_installemacsen
 #	dh_installpam
@@ -124,4 +124,4 @@ binary-arch: build install
 	dh_builddeb
 
 binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install 
+.PHONY: build clean binary-indep binary-arch binary install

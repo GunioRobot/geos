@@ -8,7 +8,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  * Author: Sandro Santilli <strk@keybit.net>
@@ -22,7 +22,7 @@
  *
  *	- Currently you have to explicitly GEOSGeom_destroy() all
  *	  GEOSGeom objects to avoid memory leaks, and to GEOSFree()
- *	  all returned char * (unless const). 
+ *	  all returned char * (unless const).
  *
  ***********************************************************************/
 
@@ -80,7 +80,7 @@ extern "C" {
 #define GEOS_CAPI_VERSION "@VERSION@-CAPI-@CAPI_VERSION@"
 #endif
 
-#define GEOS_CAPI_FIRST_INTERFACE GEOS_CAPI_VERSION_MAJOR 
+#define GEOS_CAPI_FIRST_INTERFACE GEOS_CAPI_VERSION_MAJOR
 #define GEOS_CAPI_LAST_INTERFACE (GEOS_CAPI_VERSION_MAJOR+GEOS_CAPI_VERSION_MINOR)
 
 /************************************************************************
@@ -93,8 +93,8 @@ typedef void (*GEOSMessageHandler)(const char *fmt, ...);
 
 /* When we're included by geos_c.cpp, those are #defined to the original
  * JTS definitions via preprocessor. We don't touch them to allow the
- * compiler to cross-check the declarations. However, for all "normal" 
- * C-API users, we need to define them as "opaque" struct pointers, as 
+ * compiler to cross-check the declarations. However, for all "normal"
+ * C-API users, we need to define them as "opaque" struct pointers, as
  * those clients don't have access to the original C++ headers, by design.
  */
 #ifndef GEOSGeometry
@@ -189,7 +189,7 @@ extern int GEOS_DLL GEOS_setWKBOutputDims_r(GEOSContextHandle_t handle,
                                             int newDims);
 
 /*
- * Specify whether the WKB byte order is big or little endian. 
+ * Specify whether the WKB byte order is big or little endian.
  * The return value is the previous byte order.
  */
 extern int GEOS_DLL GEOS_getWKBByteOrder();
@@ -331,7 +331,7 @@ extern int GEOS_DLL GEOSCoordSeq_getDimensions_r(GEOSContextHandle_t handle,
  *
  ***********************************************************************/
 
-/* 
+/*
  * GEOSGeometry ownership is retained by caller
  */
 
@@ -471,10 +471,10 @@ extern GEOSGeometry GEOS_DLL *GEOSSingleSidedBuffer(const GEOSGeometry* g1,
 	int leftSide);
 extern GEOSGeometry GEOS_DLL *GEOSSingleSidedBuffer_r(
 	GEOSContextHandle_t handle,
-	const GEOSGeometry* g1, double width, int quadsegs, 
+	const GEOSGeometry* g1, double width, int quadsegs,
 	int joinStyle, double mitreLimit, int leftSide);
 
-/* 
+/*
  * Only LINESTRINGs are accepted.
  * @param width : offset distance.
  *                negative for right side offset.
@@ -484,7 +484,7 @@ extern GEOSGeometry GEOS_DLL *GEOSSingleSidedBuffer_r(
 extern GEOSGeometry GEOS_DLL *GEOSOffsetCurve(const GEOSGeometry* g1,
 	double width, int quadsegs, int joinStyle, double mitreLimit);
 extern GEOSGeometry GEOS_DLL *GEOSOffsetCurve_r(GEOSContextHandle_t handle,
-	const GEOSGeometry* g1, double width, int quadsegs, 
+	const GEOSGeometry* g1, double width, int quadsegs,
 	int joinStyle, double mitreLimit);
 
 
@@ -620,7 +620,7 @@ extern GEOSGeometry GEOS_DLL *GEOSPolygonizer_getCutEdges(const GEOSGeometry * c
  * is extracted to form the edges.
  *
  * The edges must be correctly noded; that is, they must only meet
- * at their endpoints. 
+ * at their endpoints.
  * The Polygonizer will still run on incorrectly noded input
  * but will not form polygons from incorrected noded edges.
  *
@@ -635,7 +635,7 @@ extern GEOSGeometry GEOS_DLL *GEOSPolygonizer_getCutEdges(const GEOSGeometry * c
  *
  * Errors are reported to output parameters "cuts", "dangles" and
  * "invalid" (if not-null). Formed polygons are returned as a
- * collection. NULL is returned on exception. All returned 
+ * collection. NULL is returned on exception. All returned
  * geometries must be destroyed by caller.
  *
  */
@@ -686,7 +686,7 @@ extern GEOSGeometry GEOS_DLL *GEOSGeom_extractUniquePoints_r(
  *   having the _same_ direction on both inputs
  * - second element is a MULTILINESTRING containing shared paths
  *   having the _opposite_ direction on the two inputs
- * 
+ *
  * Returns NULL on exception
  */
 extern GEOSGeometry GEOS_DLL *GEOSSharedPaths(const GEOSGeometry* g1,
@@ -762,7 +762,7 @@ extern char GEOS_DLL GEOSCoveredBy_r(GEOSContextHandle_t handle,
  *
  ***********************************************************************/
 
-/* 
+/*
  * GEOSGeometry ownership is retained by caller
  */
 extern const GEOSPreparedGeometry GEOS_DLL *GEOSPrepare(const GEOSGeometry* g);
@@ -780,7 +780,7 @@ extern char GEOS_DLL GEOSPreparedOverlaps(const GEOSPreparedGeometry* pg1, const
 extern char GEOS_DLL GEOSPreparedTouches(const GEOSPreparedGeometry* pg1, const GEOSGeometry* g2);
 extern char GEOS_DLL GEOSPreparedWithin(const GEOSPreparedGeometry* pg1, const GEOSGeometry* g2);
 
-/* 
+/*
  * GEOSGeometry ownership is retained by caller
  */
 extern const GEOSPreparedGeometry GEOS_DLL *GEOSPrepare_r(
@@ -827,7 +827,7 @@ extern char GEOS_DLL GEOSPreparedWithin_r(GEOSContextHandle_t handle,
  *
  ***********************************************************************/
 
-/* 
+/*
  * GEOSGeometry ownership is retained by caller
  */
 
@@ -1004,7 +1004,7 @@ extern void GEOS_DLL GEOSSetSRID_r(GEOSContextHandle_t handle,
                                    GEOSGeometry* g, int SRID);
 
 /* May be called on all geometries in GEOS 3.x, returns -1 on error and 1
- * for non-multi geometries. Older GEOS versions only accept 
+ * for non-multi geometries. Older GEOS versions only accept
  * GeometryCollections or Multi* geometries here, and are likely to crash
  * when feeded simple geometries, so beware if you need compatibility with
  * old GEOS versions.
@@ -1121,7 +1121,7 @@ extern GEOSGeometry GEOS_DLL *GEOSGeomGetEndPoint_r(GEOSContextHandle_t handle, 
 
 /************************************************************************
  *
- *  Misc functions 
+ *  Misc functions
  *
  ***********************************************************************/
 
@@ -1134,7 +1134,7 @@ extern int GEOS_DLL GEOSHausdorffDistance(const GEOSGeometry *g1,
         const GEOSGeometry *g2, double *dist);
 extern int GEOS_DLL GEOSHausdorffDistanceDensify(const GEOSGeometry *g1,
         const GEOSGeometry *g2, double densifyFrac, double *dist);
-extern int GEOS_DLL GEOSGeomGetLength(const GEOSGeometry *g1, double *length);       
+extern int GEOS_DLL GEOSGeomGetLength(const GEOSGeometry *g1, double *length);
 extern int GEOS_DLL GEOSArea_r(GEOSContextHandle_t handle,
                                const GEOSGeometry* g1, double *area);
 extern int GEOS_DLL GEOSLength_r(GEOSContextHandle_t handle,
@@ -1274,7 +1274,7 @@ extern unsigned char GEOS_DLL *GEOSWKBWriter_writeHEX_r(
                                              const GEOSGeometry* g,
                                              size_t *size);
 
-/* 
+/*
  * Specify whether output WKB should be 2d or 3d.
  * Return previously set number of dimensions.
  */
@@ -1289,7 +1289,7 @@ extern void GEOS_DLL GEOSWKBWriter_setOutputDimension_r(
                                    GEOSWKBWriter* writer, int newDimension);
 
 /*
- * Specify whether the WKB byte order is big or little endian. 
+ * Specify whether the WKB byte order is big or little endian.
  * The return value is the previous byte order.
  */
 extern int GEOS_DLL GEOSWKBWriter_getByteOrder(const GEOSWKBWriter* writer);
@@ -1302,7 +1302,7 @@ extern void GEOS_DLL GEOSWKBWriter_setByteOrder_r(GEOSContextHandle_t handle,
                                                   int byteOrder);
 
 /*
- * Specify whether SRID values should be output. 
+ * Specify whether SRID values should be output.
  */
 extern char GEOS_DLL GEOSWKBWriter_getIncludeSRID(const GEOSWKBWriter* writer);
 extern void GEOS_DLL GEOSWKBWriter_setIncludeSRID(GEOSWKBWriter* writer, const char writeSRID);
@@ -1314,8 +1314,8 @@ extern void GEOS_DLL GEOSWKBWriter_setIncludeSRID_r(GEOSContextHandle_t handle,
 
 
 /*
- * Free buffers returned by stuff like GEOSWKBWriter_write(), 
- * GEOSWKBWriter_writeHEX() and GEOSWKTWriter_write(). 
+ * Free buffers returned by stuff like GEOSWKBWriter_write(),
+ * GEOSWKBWriter_writeHEX() and GEOSWKTWriter_write().
  */
 extern void GEOS_DLL GEOSFree( void *buffer );
 extern void GEOS_DLL GEOSFree_r( GEOSContextHandle_t handle, void *buffer );

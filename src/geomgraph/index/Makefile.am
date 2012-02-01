@@ -1,9 +1,9 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
 noinst_LTLIBRARIES = libgeomgraphindex.la
 
-INCLUDES = -I$(top_srcdir)/include 
+INCLUDES = -I$(top_srcdir)/include
 
 libgeomgraphindex_la_SOURCES = \
     MonotoneChainEdge.cpp \
@@ -13,4 +13,4 @@ libgeomgraphindex_la_SOURCES = \
     SimpleMCSweepLineIntersector.cpp \
     SimpleSweepLineIntersector.cpp \
     SweepLineEvent.cpp \
-    SweepLineSegment.cpp 
+    SweepLineSegment.cpp

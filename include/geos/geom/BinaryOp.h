@@ -7,7 +7,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  **********************************************************************
@@ -93,7 +93,7 @@
  * in an attempt at by-passing binary operation
  * robustness problems (handles TopologyExceptions)
  */
-#ifndef USE_TP_SIMPLIFY_POLICY 
+#ifndef USE_TP_SIMPLIFY_POLICY
 //# define USE_TP_SIMPLIFY_POLICY 1
 #endif
 
@@ -147,7 +147,7 @@ check_valid(const Geometry& g, const std::string& label)
         (void)label;
 #endif
 		return false;
-	} 
+	}
 	return true;
 }
 
@@ -292,11 +292,11 @@ BinaryOp(const Geometry* g0, const Geometry *g1, BinOp _Op)
 #ifdef USE_COMMONBITS_POLICY
 	// Try removing common bits (possibly obsoleted by snapping below)
 	//
-	// NOTE: this policy was _later_ implemented 
+	// NOTE: this policy was _later_ implemented
 	//       in JTS as EnhancedPrecisionOp
 	// TODO: consider using the now-ported EnhancedPrecisionOp
 	//       here too
-	// 
+	//
 	try
 	{
 		GeomPtr rG0;
@@ -324,7 +324,7 @@ BinaryOp(const Geometry* g0, const Geometry *g1, BinOp _Op)
 		check_valid(*ret, "CBR: result (before common-bits addition)");
 #endif
 
-		cbr.addCommonBits( ret.get() ); 
+		cbr.addCommonBits( ret.get() );
 
 #if GEOS_DEBUG_BINARYOP
 		check_valid(*ret, "CBR: result (before common-bits addition)");
@@ -377,7 +377,7 @@ BinaryOp(const Geometry* g0, const Geometry *g1, BinOp _Op)
 	std::cerr << "SnapOp succeeded" << std::endl;
 #endif
 		return ret;
-		
+
 	}
 	catch (const geos::util::TopologyException& ex)
 	{
@@ -439,7 +439,7 @@ BinaryOp(const Geometry* g0, const Geometry *g1, BinOp _Op)
 // USE_PRECISION_REDUCTION_POLICY }
 
 // {
-#if USE_TP_SIMPLIFY_POLICY 
+#if USE_TP_SIMPLIFY_POLICY
 
 	// Try simplifying
 	try

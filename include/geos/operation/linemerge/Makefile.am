@@ -1,9 +1,9 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
-#SUBDIRS = 
+#SUBDIRS =
 
-#EXTRA_DIST = 
+#EXTRA_DIST =
 
 geosdir = $(includedir)/geos/operation/linemerge
 
@@ -13,4 +13,4 @@ geos_HEADERS = \
 	LineMergeEdge.h \
 	LineMergeGraph.h \
 	LineMerger.h \
-	LineSequencer.h	
+	LineSequencer.h

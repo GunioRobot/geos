@@ -8,7 +8,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  **********************************************************************
@@ -33,7 +33,7 @@
 #include <cassert>
 
 namespace geos {
-	namespace geom { 
+	namespace geom {
 		class CoordinateSequenceFactory;
 		class Coordinate;
 		class CoordinateSequence;
@@ -67,7 +67,7 @@ namespace geom { // geos::geom
 class GEOS_DLL GeometryFactory {
 public:
 	/**
-	 * \brief 
+	 * \brief
 	 * Constructs a GeometryFactory that generates Geometries having a
 	 * floating PrecisionModel and a spatial-reference ID of 0.
 	 */
@@ -125,7 +125,7 @@ public:
 	GeometryFactory(const GeometryFactory &gf);
 
 	/**
-	 * \brief 
+	 * \brief
 	 * Return a pointer to the default GeometryFactory.
 	 * This is a global shared object instantiated
 	 * using default constructor.
@@ -178,7 +178,7 @@ public:
 	GeometryCollection* createGeometryCollection(
 			const std::vector<Geometry *> &newGeoms) const;
 
-	/// Construct an EMPTY MultiLineString 
+	/// Construct an EMPTY MultiLineString
 	MultiLineString* createMultiLineString() const;
 
 	/// Construct a MultiLineString taking ownership of given arguments
@@ -189,7 +189,7 @@ public:
 	MultiLineString* createMultiLineString(
 			const std::vector<Geometry *> &fromLines) const;
 
-	/// Construct an EMPTY MultiPolygon 
+	/// Construct an EMPTY MultiPolygon
 	MultiPolygon* createMultiPolygon() const;
 
 	/// Construct a MultiPolygon taking ownership of given arguments
@@ -199,7 +199,7 @@ public:
 	MultiPolygon* createMultiPolygon(
 			const std::vector<Geometry *> &fromPolys) const;
 
-	/// Construct an EMPTY LinearRing 
+	/// Construct an EMPTY LinearRing
 	LinearRing* createLinearRing() const;
 
 	/// Construct a LinearRing taking ownership of given arguments
@@ -234,7 +234,7 @@ public:
 	MultiPoint* createMultiPoint(
 			const std::vector<Coordinate> &fromCoords) const;
 
-	/// Construct an EMPTY Polygon 
+	/// Construct an EMPTY Polygon
 	Polygon* createPolygon() const;
 
 	/// Construct a Polygon taking ownership of given arguments
@@ -245,7 +245,7 @@ public:
 	Polygon* createPolygon(const LinearRing &shell,
 			const std::vector<Geometry *> &holes) const;
 
-	/// Construct an EMPTY LineString 
+	/// Construct an EMPTY LineString
 	LineString* createLineString() const;
 
 	/// Copy a LineString
@@ -290,7 +290,7 @@ public:
 	 *	class that can contain the elements of <code>geomList</code>.
 	 *
 	 * NOTE: the returned Geometry will take ownership of the
-	 * 	given vector AND its elements 
+	 * 	given vector AND its elements
 	 */
 	Geometry* buildGeometry(std::vector<Geometry *> *geoms) const;
 
@@ -341,7 +341,7 @@ public:
       const Geometry* g = *i;
       fromGeoms.push_back(const_cast<Geometry*>(g));
     }
-    
+
 
     // for an heterogeneous ...
     if ( isHeterogeneous ) {
@@ -363,13 +363,13 @@ public:
 
 	/** \brief
 	 * This function does the same thing of the omonimouse function
-	 * taking vector pointer instead of reference. 
+	 * taking vector pointer instead of reference.
 	 *
 	 * The difference is that this version will copy needed data
 	 * leaving ownership to the caller.
 	 */
 	Geometry* buildGeometry(const std::vector<Geometry *> &geoms) const;
-	
+
 	int getSRID() const;
 
 	/// \brief

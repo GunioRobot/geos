@@ -1,5 +1,5 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
 # NOTE: Make sure that 'src' appears first.
 # 'capi' and 'doc' surely rely on availability of libgeos

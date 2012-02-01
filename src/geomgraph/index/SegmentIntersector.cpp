@@ -8,7 +8,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  **********************************************************************/
@@ -105,7 +105,7 @@ SegmentIntersector::hasProperInteriorIntersection()
 bool
 SegmentIntersector::isTrivialIntersection(Edge *e0,int segIndex0,Edge *e1,int segIndex1)
 {
-//	if (e0->equals(e1)) 
+//	if (e0->equals(e1))
 	if (e0==e1) {
 		if (li->getIntersectionNum()==1) {
 			if (isAdjacentSegments(segIndex0,segIndex1))

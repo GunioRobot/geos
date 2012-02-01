@@ -1,5 +1,5 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
 SUBDIRS=\
     util \
@@ -8,7 +8,7 @@ SUBDIRS=\
 noinst_LTLIBRARIES = \
     libgeom.la
 
-INCLUDES = -I$(top_srcdir)/include 
+INCLUDES = -I$(top_srcdir)/include
 
 libgeom_la_SOURCES = \
     Coordinate.cpp \

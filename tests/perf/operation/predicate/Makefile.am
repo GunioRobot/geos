@@ -1,5 +1,5 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
 prefix=@prefix@
 top_srcdir=@top_srcdir@
@@ -9,7 +9,7 @@ noinst_PROGRAMS = RectangleIntersectsPerfTest
 
 LIBS = $(top_builddir)/src/libgeos.la
 
-RectangleIntersectsPerfTest_SOURCES = RectangleIntersectsPerfTest.cpp 
+RectangleIntersectsPerfTest_SOURCES = RectangleIntersectsPerfTest.cpp
 RectangleIntersectsPerfTest_LDADD = $(LIBS)
 
 INCLUDES = -I$(top_srcdir)/include

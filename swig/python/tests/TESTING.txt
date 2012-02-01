@@ -5,7 +5,7 @@ Author: Sean Gillies, sgillies@frii.com
 Running the tests
 -----------------
 
-To run the tests, execute 
+To run the tests, execute
 
    python tests/runtests.py -v
 

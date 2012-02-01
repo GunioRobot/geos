@@ -8,7 +8,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  **********************************************************************
@@ -72,7 +72,7 @@ GeometryCollection::GeometryCollection(vector<Geometry *> *newGeoms, const Geome
 
 /*
  * Collects all coordinates of all subgeometries into a CoordinateSequence.
- * 
+ *
  * Returns a newly the collected coordinates
  *
  */
@@ -89,7 +89,7 @@ GeometryCollection::getCoordinates() const
 			k++;
 			(*coordinates)[k] = childCoordinates->getAt(j);
 		}
-		delete childCoordinates; 
+		delete childCoordinates;
 	}
 	return CoordinateArraySequenceFactory::instance()->create(coordinates);
 }
@@ -126,7 +126,7 @@ GeometryCollection::getBoundaryDimension() const
 	return dimension;
 }
 
-int 
+int
 GeometryCollection::getCoordinateDimension() const
 {
 	int dimension=2;

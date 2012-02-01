@@ -9,7 +9,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  *
@@ -54,7 +54,7 @@ namespace noding { // geos::noding
  * All noded substrings are initialized with the same context object.
  *
  */
-class GEOS_DLL NodedSegmentString : public NodableSegmentString 
+class GEOS_DLL NodedSegmentString : public NodableSegmentString
 {
 public:
 
@@ -63,7 +63,7 @@ public:
     {
         for (ConstVect::size_type i=0, n=segStrings->size(); i<n; i++)
         {
-            NodedSegmentString const* nss = 
+            NodedSegmentString const* nss =
                 static_cast<NodedSegmentString const*>((*segStrings)[i]);
 
             const_cast<NodedSegmentString*>(nss)->getNodeList().addSplitEdges( resultEdgelist);
@@ -102,25 +102,25 @@ public:
 	 * Adds an intersection node for a given point and segment to this segment string.
 	 * If an intersection already exists for this exact location, the existing
 	 * node will be returned.
-	 * 
+	 *
 	 * @param intPt the location of the intersection
 	 * @param segmentIndex the index of the segment containing the intersection
 	 * @return the intersection node for the point
 	 */
-	SegmentNode* addIntersectionNode( geom::Coordinate * intPt, std::size_t segmentIndex) 
+	SegmentNode* addIntersectionNode( geom::Coordinate * intPt, std::size_t segmentIndex)
 	{
 		std::size_t normalizedSegmentIndex = segmentIndex;
 
 		// normalize the intersection point location
 		std::size_t nextSegIndex = normalizedSegmentIndex + 1;
-		if (nextSegIndex < size()) 
+		if (nextSegIndex < size())
 		{
-			geom::Coordinate const& nextPt = 
+			geom::Coordinate const& nextPt =
                 getCoordinate(static_cast<unsigned int>(nextSegIndex));
 
 			// Normalize segment index if intPt falls on vertex
 			// The check for point equality is 2D only - Z values are ignored
-			if ( intPt->equals2D( nextPt )) 
+			if ( intPt->equals2D( nextPt ))
 			{
 				normalizedSegmentIndex = nextSegIndex;
 			}
@@ -152,7 +152,7 @@ public:
 	/** \brief
 	 * Gets the octant of the segment starting at vertex index.
 	 *
-	 * @param index the index of the vertex starting the segment. 
+	 * @param index the index of the vertex starting the segment.
 	 *        Must not be the last index in the vertex list
 	 * @return the octant of the segment at the vertex
 	 */

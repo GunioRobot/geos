@@ -8,7 +8,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  **********************************************************************
@@ -25,7 +25,7 @@
 #include <geos/io/ByteOrderValues.h>
 #include <geos/util/Machine.h> // for getMachineByteOrder
 
-#include <iostream> // ostream, istream 
+#include <iostream> // ostream, istream
 
 namespace geos {
 namespace io {
@@ -43,7 +43,7 @@ ByteOrderDataInStream::~ByteOrderDataInStream()
 {
 }
 
-INLINE void 
+INLINE void
 ByteOrderDataInStream::setInStream(std::istream *s)
 {
 	stream=s;
@@ -65,7 +65,7 @@ ByteOrderDataInStream::readByte() // throws ParseException
 }
 
 INLINE int
-ByteOrderDataInStream::readInt() 
+ByteOrderDataInStream::readInt()
 {
 	stream->read(reinterpret_cast<char *>(buf), 4);
 	if ( stream->eof() )
@@ -74,7 +74,7 @@ ByteOrderDataInStream::readInt()
 }
 
 INLINE long
-ByteOrderDataInStream::readLong() 
+ByteOrderDataInStream::readLong()
 {
 	stream->read(reinterpret_cast<char *>(buf), 8);
 	if ( stream->eof() )
@@ -83,7 +83,7 @@ ByteOrderDataInStream::readLong()
 }
 
 INLINE double
-ByteOrderDataInStream::readDouble() 
+ByteOrderDataInStream::readDouble()
 {
 	stream->read(reinterpret_cast<char *>(buf), 8);
 	if ( stream->eof() )

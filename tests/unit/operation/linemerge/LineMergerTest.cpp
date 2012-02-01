@@ -1,4 +1,4 @@
-// 
+//
 // Test Suite for geos::operation::linemerge::LineMerger class.
 
 // tut
@@ -129,7 +129,7 @@ namespace tut
 
       return false;
     }
- 
+
 
 
   private:

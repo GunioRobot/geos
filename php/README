@@ -12,7 +12,7 @@ REQUIREMENTS
 ------------
 
 You need php5 development tools, often found in
-packages named something like 'php5-dev'. 
+packages named something like 'php5-dev'.
 
 BUILD
 -----

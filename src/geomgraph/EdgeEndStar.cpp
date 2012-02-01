@@ -9,7 +9,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  **********************************************************************
@@ -100,7 +100,7 @@ EdgeEndStar::computeLabelling(std::vector<GeometryGraph*> *geomGraph)
 	 * In all other cases (e.g. the node is on a line, on a point, or
 	 * not on the geometry at all) the edge
 	 * has the location EXTERIOR for the geometry.
-	 * 
+	 *
 	 * Note that the edge cannot be on the BOUNDARY of the geometry,
 	 * since then there would have been a parallel edge from the
 	 * Geometry at this node also labelled BOUNDARY

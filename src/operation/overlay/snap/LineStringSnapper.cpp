@@ -8,7 +8,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  ***********************************************************************
@@ -75,7 +75,7 @@ cerr << "Snapping vertices of: " << srcCoords << endl;
 	// try snapping vertices
 	// if src is a ring then don't snap final vertex
 	CoordinateList::iterator it = srcCoords.begin();
-	CoordinateList::iterator end = srcCoords.end(); 
+	CoordinateList::iterator end = srcCoords.end();
 	CoordinateList::iterator last = end; --last;
   if ( isClosed ) --end;
 	for ( ; it != end; ++it )
@@ -97,7 +97,7 @@ cerr << " no snap found" << endl;
 
 		assert(*found);
 		const Coordinate& snapPt = *(*found);
-		
+
 #if GEOS_DEBUG
 cerr << " found snap point " << snapPt << endl;
 #endif
@@ -232,7 +232,7 @@ LineStringSnapper::findSegmentToSnap(
 	// TODO: use std::find_if
 	for ( ; from != too_far; ++from)
 	{
-		seg.p0 = *from; 
+		seg.p0 = *from;
 		CoordinateList::iterator to = from;
 		++to;
 		seg.p1 = *to;

@@ -1,7 +1,7 @@
 Compatibility notes
 ===================
 
-OS/X 10.6, compile with gcc-4.0 rather than the default gcc that 
+OS/X 10.6, compile with gcc-4.0 rather than the default gcc that
 comes with XCode.
 
   CC=gcc-4.0 CXX=g++-4.0 ./configure
@@ -17,8 +17,8 @@ As root:
 
 The default install location for GEOS is /usr/local.
 
-Linux: Make sure that /usr/local/lib is added to /etc/ld.so.conf 
-       Make sure that you run /sbin/ldconfig afterwards 
+Linux: Make sure that /usr/local/lib is added to /etc/ld.so.conf
+       Make sure that you run /sbin/ldconfig afterwards
 
 Solaris: Make sure that /usr/local/lib is added to LD_LIBRARY_PATH
 

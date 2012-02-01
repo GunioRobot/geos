@@ -9,7 +9,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  **********************************************************************
@@ -35,8 +35,8 @@
 
 #include <vector>
 #include <cmath> // for fabs
-#include <cassert> 
-#include <algorithm> 
+#include <cassert>
+#include <algorithm>
 #include <memory>
 
 #ifndef GEOS_DEBUG
@@ -728,14 +728,14 @@ Polygon::isRectangle() const
  * files.
  *
  * Revision 1.26  2003/10/31 16:36:04  strk
- * Re-introduced clone() method. Copy constructor could not really 
+ * Re-introduced clone() method. Copy constructor could not really
  * replace it.
  *
  * Revision 1.25  2003/10/17 05:51:21  ybychkov
  * Fixed a small memory leak.
  *
  * Revision 1.24  2003/10/16 08:50:00  strk
- * Memory leak fixes. Improved performance by mean of more calls to 
+ * Memory leak fixes. Improved performance by mean of more calls to
  * new getCoordinatesRO() when applicable.
  *
  **********************************************************************/

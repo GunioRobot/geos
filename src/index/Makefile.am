@@ -1,5 +1,5 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
 SUBDIRS = \
 	bintree \
@@ -11,7 +11,7 @@ SUBDIRS = \
 
 noinst_LTLIBRARIES = libindex.la
 
-libindex_la_SOURCES = 
+libindex_la_SOURCES =
 
 libindex_la_LIBADD = \
 	bintree/libindexbintree.la \

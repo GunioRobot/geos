@@ -1,9 +1,9 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
-#SUBDIRS = 
+#SUBDIRS =
 
-#EXTRA_DIST = 
+#EXTRA_DIST =
 
 geosdir = $(includedir)/geos/operation/valid
 
@@ -15,4 +15,4 @@ geos_HEADERS = \
     RepeatedPointTester.h       \
     SimpleNestedRingTester.h    \
     SweeplineNestedRingTester.h \
-    TopologyValidationError.h   
+    TopologyValidationError.h

@@ -1,11 +1,11 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
-SUBDIRS = 
+SUBDIRS =
 
 noinst_LTLIBRARIES = liboplinemerge.la
 
-INCLUDES = -I$(top_srcdir)/include 
+INCLUDES = -I$(top_srcdir)/include
 
 liboplinemerge_la_SOURCES = \
 	EdgeString.cpp \
@@ -15,4 +15,4 @@ liboplinemerge_la_SOURCES = \
 	LineMerger.cpp \
 	LineSequencer.cpp
 
-liboplinemerge_la_LIBADD = 
+liboplinemerge_la_LIBADD =

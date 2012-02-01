@@ -1,9 +1,9 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
-SUBDIRS = 
+SUBDIRS =
 
-EXTRA_DIST = 
+EXTRA_DIST =
 
 geosdir = $(includedir)/geos/index/sweepline
 
@@ -11,4 +11,4 @@ geos_HEADERS =              \
     SweepLineEvent.h        \
     SweepLineIndex.h        \
     SweepLineInterval.h     \
-    SweepLineOverlapAction.h    
+    SweepLineOverlapAction.h

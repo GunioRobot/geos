@@ -1,5 +1,5 @@
 #######################################################################
-# 
+#
 #    GEOS - Geometry Engine Open Source
 #    http://trac.osgeo.org/geos
 #
@@ -27,13 +27,13 @@ if ENABLE_PHP
 
 SUBDIRS = . test
 
-EXTRA_DIST = README 
+EXTRA_DIST = README
 
 pkglib_LTLIBRARIES = geos.la
 
 geos_la_SOURCES = geos.c php_geos.h
 
-geos_la_LIBADD =  $(top_builddir)/capi/libgeos_c.la 
+geos_la_LIBADD =  $(top_builddir)/capi/libgeos_c.la
 
 # TODO: check if -no-undefined should be added
 geos_la_LDFLAGS = -module -avoid-version

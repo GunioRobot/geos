@@ -1,4 +1,4 @@
-// 
+//
 // Test Suite for C-API GEOSPreparedGeometry
 
 #include <tut.hpp>
@@ -35,7 +35,7 @@ namespace tut
             va_start(ap, fmt);
             std::vfprintf(stdout, fmt, ap);
             va_end(ap);
-        
+
             std::fprintf(stdout, "\n");
         }
 
@@ -43,7 +43,7 @@ namespace tut
             : geom1_(0), geom2_(0), prepGeom1_(0), prepGeom2_(0)
         {
             initGEOS(notice, notice);
-        }       
+        }
 
         ~test_capigeospreparedgeometry_data()
         {
@@ -83,7 +83,7 @@ namespace tut
 
     // Test PreparedContainsProperly
     // Taken from regress/regress_ogc_prep.sql of postgis
-    // as of revno 3936 
+    // as of revno 3936
     // ref: containsproperly200 (a)
     template<>
     template<>
@@ -102,7 +102,7 @@ namespace tut
 
     // Test PreparedContainsProperly
     // Taken from regress/regress_ogc_prep.sql of postgis
-    // as of revno 3936 
+    // as of revno 3936
     // ref: containsproperly200 (b)
     template<>
     template<>
@@ -122,7 +122,7 @@ namespace tut
     // Test PreparedIntersects
     // Also used as a linestring leakage reported
     // by http://trac.osgeo.org/geos/ticket/305
-    // 
+    //
     template<>
     template<>
     void object::test<4>()
@@ -171,6 +171,6 @@ namespace tut
     }
 
     // TODO: add lots of more tests
-    
+
 } // namespace tut
 

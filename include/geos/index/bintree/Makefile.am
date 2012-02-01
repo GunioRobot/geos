@@ -1,9 +1,9 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
-SUBDIRS = 
+SUBDIRS =
 
-EXTRA_DIST = 
+EXTRA_DIST =
 
 
 geosdir = $(includedir)/geos/index/bintree
@@ -14,4 +14,4 @@ geos_HEADERS = \
     Key.h \
     NodeBase.h \
     Node.h \
-    Root.h      
+    Root.h

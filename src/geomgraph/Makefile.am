@@ -1,11 +1,11 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
 SUBDIRS = index
 
 noinst_LTLIBRARIES = libgeomgraph.la
 
-INCLUDES = -I$(top_srcdir)/include 
+INCLUDES = -I$(top_srcdir)/include
 
 libgeomgraph_la_SOURCES = \
 	Depth.cpp \
@@ -27,6 +27,6 @@ libgeomgraph_la_SOURCES = \
 	PlanarGraph.cpp \
 	Position.cpp \
 	Quadrant.cpp \
-	TopologyLocation.cpp 
+	TopologyLocation.cpp
 
 libgeomgraph_la_LIBADD = index/libgeomgraphindex.la

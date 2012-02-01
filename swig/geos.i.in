@@ -5,7 +5,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  * ========================================================================= */
@@ -18,7 +18,7 @@
 %include "std_vector.i"
 %include "std_except.i"
 
-%{ 
+%{
 #include "geos_c.h"
 /* Needed for va_start, etc. */
 #include <stdarg.h>
@@ -36,12 +36,12 @@
 #define GEOS_CAPI_VERSION_MAJOR @CAPI_VERSION_MAJOR@
 #define GEOS_CAPI_VERSION_MINOR @CAPI_VERSION_MINOR@
 #define GEOS_CAPI_VERSION_PATCH @CAPI_VERSION_PATCH@
-#define GEOS_CAPI_FIRST_INTERFACE GEOS_CAPI_VERSION_MAJOR 
+#define GEOS_CAPI_FIRST_INTERFACE GEOS_CAPI_VERSION_MAJOR
 #define GEOS_CAPI_LAST_INTERFACE (GEOS_CAPI_VERSION_MAJOR+GEOS_CAPI_VERSION_MINOR)
 #define GEOS_CAPI_VERSION "@VERSION@-CAPI-@CAPI_VERSION@"
 
 /* Supported geometry types */
-enum GEOSGeomTypes { 
+enum GEOSGeomTypes {
     GEOS_POINT,
     GEOS_LINESTRING,
     GEOS_LINEARRING,
@@ -115,7 +115,7 @@ const char *GEOSversion();
 
 /* Import language specific SWIG files.  This allows each language
    to define its own renames as well as any special functionality
-   such as language specific iterators for collections. Note 
+   such as language specific iterators for collections. Note
    that %include allows the included files to generate interface
    wrapper code while %import does not.  Thus use %include since
    this is an important feature (for example, Ruby needs it to #undef
@@ -216,7 +216,7 @@ public:
         GEOSCoordSeq_getY(coords, idx, &result);
         return result;
     }
-    
+
     double getZ(size_t idx)
     {
         double result;
@@ -225,7 +225,7 @@ public:
         GEOSCoordSeq_getZ(coords, idx, &result);
         return result;
     }
-    
+
     double getOrdinate(size_t idx, size_t dim)
     {
         double result;
@@ -384,7 +384,7 @@ public:
         GEOSGeom geom = (GEOSGeom) self;
         return GEOSGeom_clone(geom);
     }
-    
+
     char *geomType()
     {
         GEOSGeom geom = (GEOSGeom) self;
@@ -396,7 +396,7 @@ public:
         GEOSGeom geom = (GEOSGeom) self;
         return GEOSGeomTypeId(geom);
     }
-    
+
     void normalize()
     {
         GEOSGeom geom = (GEOSGeom) self;
@@ -428,7 +428,7 @@ public:
     {
         GEOSGeom geom = (GEOSGeom) self;
         size_t result = GEOSGetNumGeometries(geom);
-        
+
         if ((int)result == -1)
             throw std::runtime_error(message);
 
@@ -481,7 +481,7 @@ public:
         GEOSGeom otherGeom = (GEOSGeom) other;
         return (GeosGeometry*) GEOSUnion(geom, otherGeom);
     }
-    
+
     GeosGeometry *pointOnSurface()
     {
         GEOSGeom geom = (GEOSGeom) self;
@@ -678,13 +678,13 @@ private:
     GeosPoint();
 public:
 %extend
-{   
+{
     ~GeosPoint()
     {
         GEOSGeom geom = (GEOSGeom) self;
         GEOSGeom_destroy(geom);
     }
-    
+
     const GeosCoordinateSequence* getCoordSeq()
     {
         GEOSGeom geom = (GEOSGeom) self;
@@ -702,13 +702,13 @@ class GeosLineString: public GeosGeometry
 {
 public:
 %extend
-{   
+{
     ~GeosLineString()
     {
         GEOSGeom geom = (GEOSGeom) self;
         GEOSGeom_destroy(geom);
     }
-    
+
     const GeosCoordinateSequence* getCoordSeq()
     {
         GEOSGeom geom = (GEOSGeom) self;
@@ -726,13 +726,13 @@ class GeosLinearRing: public GeosGeometry
 {
 public:
 %extend
-{   
+{
     ~GeosLinearRing()
     {
         GEOSGeom geom = (GEOSGeom) self;
         GEOSGeom_destroy(geom);
     }
-    
+
     const GeosCoordinateSequence* getCoordSeq()
     {
         GEOSGeom geom = (GEOSGeom) self;
@@ -751,13 +751,13 @@ class GeosPolygon: public GeosGeometry
 {
 public:
 %extend
-{   
+{
     ~GeosPolygon()
     {
         GEOSGeom geom = (GEOSGeom) self;
         GEOSGeom_destroy(geom);
     }
-    
+
     const GeosGeometry* getExteriorRing()
     {
         GEOSGeom geom = (GEOSGeom) self;
@@ -803,13 +803,13 @@ class GeosGeometryCollection: public GeosGeometry
 {
 public:
 %extend
-{   
+{
     ~GeosGeometryCollection()
     {
         GEOSGeom geom = (GEOSGeom) self;
         GEOSGeom_destroy(geom);
     }
-    
+
     const GeosGeometry* getGeometryN(size_t n)
     {
         GEOSGeom geom = (GEOSGeom) self;
@@ -827,7 +827,7 @@ class GeosMultiPoint: public GeosGeometryCollection
 {
 public:
 %extend
-{   
+{
     ~GeosMultiPoint()
     {
         GEOSGeom geom = (GEOSGeom) self;
@@ -840,7 +840,7 @@ class GeosMultiLineString: public GeosGeometryCollection
 {
 public:
 %extend
-{   
+{
     ~GeosMultiLineString()
     {
         GEOSGeom geom = (GEOSGeom) self;
@@ -853,7 +853,7 @@ class GeosMultiLinearRing: public GeosGeometryCollection
 {
 public:
 %extend
-{   
+{
     ~GeosMultiLinearRing()
     {
         GEOSGeom geom = (GEOSGeom) self;
@@ -866,7 +866,7 @@ class GeosMultiPolygon: public GeosGeometryCollection
 {
 public:
 %extend
-{   
+{
     ~GeosMultiPolygon()
     {
         GEOSGeom geom = (GEOSGeom) self;
@@ -943,7 +943,7 @@ GeosGeometry *createPolygon(GeosLinearRing *shell, GeosLinearRing **holes, size_
  * Second argument is an array of GEOSGeom objects.
  * The caller remains owner of the array, but pointed-to
  * objects become ownership of the returned GEOSGeom.
- 
+
 extern GEOSGeom GEOS_DLL GEOSGeom_createCollection(int type,
 	GEOSGeom *geoms, size_t ngeoms);
 */
@@ -1085,7 +1085,7 @@ public:
 
 /* These three type maps are for geomToWKB and geomToHEX.  We need
 to ignore the size input argument, then create a new string in the
-scripting language of the correct size, and then free the 
+scripting language of the correct size, and then free the
 provided string. */
 
 /* set the size parameter to a temporary variable. */
@@ -1097,13 +1097,13 @@ provided string. */
 
 /* Disable SWIG's normally generated code so we can replace it
    with the argout typemap below. */
-%typemap(out) unsigned char* 
+%typemap(out) unsigned char*
 {
     /* %typemap(out) unsigned char* */
 }
 
 /* Create a new target string of the correct size. */
-%typemap(argout) size_t *size 
+%typemap(argout) size_t *size
 {
     /* %typemap(argout) size_t *size */
     $result = SWIG_FromCharPtrAndSize((const char*)result, *$1);
@@ -1127,18 +1127,18 @@ public:
     {
         return GEOSWKTReader_create();
     }
-        
+
     ~GeosWktReader()
     {
         GEOSWKTReader *reader = (GEOSWKTReader*) self;
         GEOSWKTReader_destroy(reader);
     }
-    
+
     GeosGeometry* read(const char *wkt)
     {
         if(wkt == NULL)
             throw std::runtime_error("Trying to create geometry from a NULL string");
-            
+
         GEOSWKTReader *reader = (GEOSWKTReader*) self;
         GEOSGeometry *geom = GEOSWKTReader_read(reader, wkt);
 
@@ -1159,13 +1159,13 @@ public:
     {
         return GEOSWKTWriter_create();
     }
-        
+
     ~GeosWktWriter()
     {
         GEOSWKTWriter *writer = (GEOSWKTWriter*) self;
         GEOSWKTWriter_destroy(writer);
     }
-    
+
     char* write(const GeosGeometry* g)
     {
         GEOSWKTWriter *writer = (GEOSWKTWriter*) self;
@@ -1187,35 +1187,35 @@ public:
     {
         return GEOSWKBReader_create();
     }
-        
+
     ~GeosWkbReader()
     {
         GEOSWKBReader *reader = (GEOSWKBReader*) self;
         GEOSWKBReader_destroy(reader);
     }
-    
+
     GeosGeometry* read(const unsigned char *wkb, size_t size)
     {
         if(wkb == NULL)
           throw std::runtime_error("Trying to create geometry from a NULL string");
-         
+
         GEOSWKBReader *reader = (GEOSWKBReader*) self;
         GEOSGeometry *geom = GEOSWKBReader_read(reader, wkb, size);
-       
+
         if(geom == NULL)
           throw std::runtime_error(message);
 
         return (GeosGeometry*) geom;
     }
-    
+
     GeosGeometry* readHEX(const unsigned char *wkb, size_t size)
     {
         if(wkb == NULL)
           throw std::runtime_error("Trying to create geometry from a NULL string");
-         
+
         GEOSWKBReader *reader = (GEOSWKBReader*) self;
         GEOSGeometry *geom = GEOSWKBReader_readHEX(reader, wkb, size);
-       
+
         if(geom == NULL)
           throw std::runtime_error(message);
 
@@ -1233,13 +1233,13 @@ public:
     {
         return GEOSWKBWriter_create();
     }
-        
+
     ~GeosWkbWriter()
     {
         GEOSWKBWriter *writer = (GEOSWKBWriter*) self;
         GEOSWKBWriter_destroy(writer);
     }
-    
+
     int getOutputDimension()
     {
         GEOSWKBWriter *writer = (GEOSWKBWriter*) self;
@@ -1275,14 +1275,14 @@ public:
         GEOSWKBWriter *writer = (GEOSWKBWriter*) self;
         return GEOSWKBWriter_setIncludeSRID(writer, newIncludeSRID);
     }
-    
+
     unsigned char* write(const GeosGeometry* g, size_t *size)
     {
         GEOSWKBWriter *writer = (GEOSWKBWriter*) self;
         GEOSGeom geom = (GEOSGeom) g;
         return GEOSWKBWriter_write(writer, geom, size);
     }
-    
+
     unsigned char* writeHEX(const GeosGeometry* g, size_t *size)
     {
         GEOSWKBWriter *writer = (GEOSWKBWriter*) self;

@@ -1,4 +1,4 @@
-// 
+//
 // Ported from JTS junit/algorithm/RobustLineIntersectorTest.java rev. 1.1
 
 #include <tut.hpp>
@@ -9,7 +9,7 @@
 #include <geos/geom/PrecisionModel.h>
 #include <geos/geom/GeometryFactory.h>
 #include <geos/geom/Geometry.h> // required for use in auto_ptr
-#include <geos/geom/LineString.h> 
+#include <geos/geom/LineString.h>
 #include <geos/geom/Coordinate.h>
 #include <geos/geom/Point.h>
 #include <geos/geom/CoordinateSequence.h>
@@ -20,7 +20,7 @@
 #include <memory>
 
 
-using namespace geos::geom; // 
+using namespace geos::geom; //
 using geos::algorithm::LineIntersector;
 using geos::algorithm::CGAlgorithms;
 
@@ -56,7 +56,7 @@ namespace tut
 	template<>
 	template<>
 	void object::test<1>()
-	{         
+	{
     LineIntersector i;
     Coordinate p1(10, 10);
     Coordinate p2(20, 20);
@@ -76,7 +76,7 @@ namespace tut
 	template<>
 	template<>
 	void object::test<2>()
-	{         
+	{
     LineIntersector i;
     Coordinate p1(10, 10);
     Coordinate p2(20, 10);
@@ -94,7 +94,7 @@ namespace tut
 	template<>
 	template<>
 	void object::test<3>()
-	{         
+	{
     LineIntersector i;
     Coordinate p1(10, 10);
     Coordinate p2(20, 10);
@@ -112,7 +112,7 @@ namespace tut
 	template<>
 	template<>
 	void object::test<4>()
-	{         
+	{
     LineIntersector i;
     Coordinate p1(10, 10);
     Coordinate p2(20, 10);
@@ -130,7 +130,7 @@ namespace tut
 	template<>
 	template<>
 	void object::test<5>()
-	{         
+	{
     LineIntersector i;
     Coordinate p1(10, 10);
     Coordinate p2(20, 10);
@@ -148,7 +148,7 @@ namespace tut
 	template<>
 	template<>
 	void object::test<6>()
-	{         
+	{
     i.computeIntersection(Coordinate(100, 100), Coordinate(10, 100),
         Coordinate(100, 10), Coordinate(100, 100));
     ensure("hasIntersection", i.hasIntersection());
@@ -159,7 +159,7 @@ namespace tut
 	template<>
 	template<>
 	void object::test<7>()
-	{         
+	{
     i.computeIntersection(Coordinate(190, 50), Coordinate(120, 100),
         Coordinate(120, 100), Coordinate(50, 150));
     ensure("hasIntersection", i.hasIntersection());
@@ -171,7 +171,7 @@ namespace tut
 	template<>
 	template<>
 	void object::test<8>()
-	{         
+	{
     i.computeIntersection(Coordinate(180, 200), Coordinate(160, 180),
         Coordinate(220, 240), Coordinate(140, 160));
     ensure("hasIntersection", i.hasIntersection());
@@ -182,7 +182,7 @@ namespace tut
 	template<>
 	template<>
 	void object::test<9>()
-	{         
+	{
     i.computeIntersection(Coordinate(30, 10), Coordinate(30, 30),
         Coordinate(10, 10), Coordinate(90, 11));
     ensure("hasIntersection", i.hasIntersection());
@@ -194,7 +194,7 @@ namespace tut
 	template<>
 	template<>
 	void object::test<10>()
-	{         
+	{
     i.computeIntersection(Coordinate(10, 30), Coordinate(10, 0),
         Coordinate(11, 90), Coordinate(10, 10));
     ensure("hasIntersection", i.hasIntersection());
@@ -206,7 +206,7 @@ namespace tut
 	template<>
 	template<>
 	void object::test<11>()
-	{         
+	{
 	    ensure_equals(CGAlgorithms::computeOrientation(
 		Coordinate(-123456789, -40),
 		Coordinate(0, 0),
@@ -217,7 +217,7 @@ namespace tut
 	template<>
 	template<>
 	void object::test<12>()
-	{         
+	{
 	    ensure_equals(CGAlgorithms::computeOrientation(
 		Coordinate(10, 10),
 		Coordinate(20, 20),
@@ -228,7 +228,7 @@ namespace tut
 	template<>
 	template<>
 	void object::test<13>()
-	{         
+	{
     Coordinate p1(-123456789, -40);
     Coordinate p2(381039468754763.0, 123456789);
     Coordinate q(0, 0);

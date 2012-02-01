@@ -5,7 +5,7 @@ AC_DEFUN([AC_PYTHON_DEVEL],[
         AC_REQUIRE([AM_PATH_PYTHON])
 
         base_python_path=`echo $PYTHON | sed "s,/bin.*$,,"`
-				
+
         # Need to fix up a couple of problems on Windows/MingW:
         # 1.  python lib is named with MAJOR.VERSION collapsed in a single value,
         #     so libpython2.4 versus libpython24
@@ -19,7 +19,7 @@ AC_DEFUN([AC_PYTHON_DEVEL],[
 
                 PYTHON_VERSION=`echo $PYTHON_VERSION | sed "s/\.//"`
                 AC_SUBST([PYTHON_VERSION], [$PYTHON_VERSION])
-                
+
                 pythondir=`echo $pythondir | sed 's,\\\,/,g'`
                 AC_SUBST([pkgpythondir], [\${pythondir}/$PACKAGE])
 

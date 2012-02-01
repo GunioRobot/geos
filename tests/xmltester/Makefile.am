@@ -1,5 +1,5 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
 #prefix=@prefix@
 #top_srcdir=@top_srcdir@
@@ -7,7 +7,7 @@
 
 TESTS = testrunner
 
-CLEANFILES = testrunner 
+CLEANFILES = testrunner
 
 EXTRA_DIST = testrunner.sh CMakeLists.txt
 
@@ -83,7 +83,7 @@ SAFE_XMLTESTS=$(srcdir)/tests/testLeaksBig.xml \
 	$(srcdir)/tests/safe/16596.xml \
 	$(srcdir)/tests/safe/TestBufferJagged.xml
 
-INVALID_OUTPUT_XMLTESTS = 
+INVALID_OUTPUT_XMLTESTS =
 
 FAILING_XMLTESTS = \
 	$(srcdir)/tests/failure/TestOverlay.xml
@@ -123,7 +123,7 @@ XMLTester_LDADD = $(LIBS)
 
 # Intentionally drop -ansi -pedantic
 # See http://trac.osgeo.org/geos/ticket/319
-XMLTester_CXXFLAGS = 
+XMLTester_CXXFLAGS =
 
 INCLUDES = -I$(top_srcdir)/include
 INCLUDES += -I$(top_srcdir)/src/io/tinyxml -DTIXML_USE_STL

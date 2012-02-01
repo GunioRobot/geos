@@ -1,5 +1,5 @@
 /***********************************************************************
- * 
+ *
  *    GEOS - Geometry Engine Open Source
  *    http://trac.osgeo.org/geos
  *
@@ -93,7 +93,7 @@ static void errorHandler(const char *fmt, ...)
 
     /* TODO: use a GEOSException ? */
     zend_throw_exception_ex(zend_exception_get_default(TSRMLS_CC),
-        1 TSRMLS_CC, "%s", message); 
+        1 TSRMLS_CC, "%s", message);
 
 }
 
@@ -102,7 +102,7 @@ typedef struct Proxy_t {
     void* relay;
 } Proxy;
 
-static void 
+static void
 setRelay(zval* val, void* obj) {
     Proxy* proxy = (Proxy*)zend_object_store_get_object(val TSRMLS_CC);
     proxy->relay = obj;
@@ -186,12 +186,12 @@ PHP_METHOD(Geometry, difference);
 PHP_METHOD(Geometry, symDifference);
 PHP_METHOD(Geometry, boundary);
 PHP_METHOD(Geometry, union); /* also does union cascaded */
-PHP_METHOD(Geometry, pointOnSurface); 
-PHP_METHOD(Geometry, centroid); 
-PHP_METHOD(Geometry, relate); 
-PHP_METHOD(Geometry, relateBoundaryNodeRule); 
+PHP_METHOD(Geometry, pointOnSurface);
+PHP_METHOD(Geometry, centroid);
+PHP_METHOD(Geometry, relate);
+PHP_METHOD(Geometry, relateBoundaryNodeRule);
 PHP_METHOD(Geometry, simplify); /* also does topology-preserving */
-PHP_METHOD(Geometry, extractUniquePoints); 
+PHP_METHOD(Geometry, extractUniquePoints);
 PHP_METHOD(Geometry, disjoint);
 PHP_METHOD(Geometry, touches);
 PHP_METHOD(Geometry, intersects);
@@ -365,7 +365,7 @@ Geometry_serialize(zval *object, unsigned char **buffer, zend_uint *buf_len,
 
     *buf_len = retsize;
 
-    return SUCCESS; 
+    return SUCCESS;
 }
 
 static int
@@ -420,7 +420,7 @@ dumpGeometry(GEOSGeometry* g, zval* array)
         MAKE_STD_ZVAL(tmp);
         object_init_ex(tmp, Geometry_ce_ptr);
         setRelay(tmp, cc);
-        add_next_index_zval(array, tmp); 
+        add_next_index_zval(array, tmp);
     }
 }
 
@@ -472,7 +472,7 @@ PHP_METHOD(Geometry, __toString)
     if ( ! wkt ) RETURN_NULL();
 
     GEOSWKTWriter_destroy(writer);
-    
+
 
     ret = estrdup(wkt);
     GEOSFree(wkt);
@@ -537,7 +537,7 @@ PHP_METHOD(Geometry, interpolate)
  *
  * styleArray keys supported:
  *  'quad_segs'
- *       Type: int 
+ *       Type: int
  *       Number of segments used to approximate
  *       a quarter circle (defaults to 8).
  *  'endcap'
@@ -641,7 +641,7 @@ PHP_METHOD(Geometry, buffer)
  *
  * styleArray keys supported:
  *  'quad_segs'
- *       Type: int 
+ *       Type: int
  *       Number of segments used to approximate
  *       a quarter circle (defaults to 8).
  *  'join'
@@ -1369,9 +1369,9 @@ PHP_METHOD(Geometry, checkValidity)
 
     /* return value is an array */
     array_init(return_value);
-    add_assoc_bool(return_value, "valid", retBool); 
-    if ( reasonVal ) add_assoc_string(return_value, "reason", reasonVal, 0); 
-    if ( locationVal ) add_assoc_zval(return_value, "location", locationVal); 
+    add_assoc_bool(return_value, "valid", retBool);
+    if ( reasonVal ) add_assoc_string(return_value, "reason", reasonVal, 0);
+    if ( locationVal ) add_assoc_zval(return_value, "location", locationVal);
 
 }
 
@@ -1557,7 +1557,7 @@ PHP_METHOD(Geometry, geometryN)
         RETURN_NULL();
     }
 
-    if ( num >= GEOSGetNumGeometries(geom) ) RETURN_NULL(); 
+    if ( num >= GEOSGetNumGeometries(geom) ) RETURN_NULL();
     c = GEOSGetGeometryN(geom, num);
     if ( ! c ) RETURN_NULL(); /* should get an exception first */
     cc = GEOSGeom_clone(c);
@@ -1650,7 +1650,7 @@ PHP_METHOD(Geometry, interiorRingN)
         RETURN_NULL();
     }
 
-    if ( num >= GEOSGetNumInteriorRings(geom) ) RETURN_NULL(); 
+    if ( num >= GEOSGetNumInteriorRings(geom) ) RETURN_NULL();
     c = GEOSGetInteriorRingN(geom, num);
     if ( ! c ) RETURN_NULL(); /* should get an exception first */
     cc = GEOSGeom_clone(c);
@@ -1745,7 +1745,7 @@ PHP_METHOD(Geometry, pointN)
         RETURN_NULL();
     }
 
-    if ( num >= GEOSGeomGetNumPoints(geom) ) RETURN_NULL(); 
+    if ( num >= GEOSGeomGetNumPoints(geom) ) RETURN_NULL();
     c = GEOSGeomGetPointN(geom, num);
     if ( ! c ) RETURN_NULL(); /* should get an exception first */
 
@@ -1967,7 +1967,7 @@ PHP_METHOD(WKTReader, read)
     geom = GEOSWKTReader_read(reader, wkt);
     /* we'll probably get an exception if geom is null */
     if ( ! geom ) RETURN_NULL();
- 
+
     /* return_value is a zval */
     object_init_ex(return_value, Geometry_ce_ptr);
     setRelay(return_value, geom);
@@ -2413,7 +2413,7 @@ PHP_METHOD(WKBReader, readHEX)
     geom = GEOSWKBReader_readHEX(reader, wkb, wkblen);
     /* we'll probably get an exception if geom is null */
     if ( ! geom ) RETURN_NULL();
- 
+
     /* return_value is a zval */
     object_init_ex(return_value, Geometry_ce_ptr);
     setRelay(return_value, geom);
@@ -2440,18 +2440,18 @@ PHP_FUNCTION(GEOSVersion)
  * The returned array contains the following elements:
  *
  *  - 'rings'
- *      Type: array of GEOSGeometry 
+ *      Type: array of GEOSGeometry
  *      Rings that can be formed by the costituent
  *      linework of geometry.
  *  - 'cut_edges' (optional)
- *      Type: array of GEOSGeometry 
+ *      Type: array of GEOSGeometry
  *      Edges which are connected at both ends but
  *      which do not form part of polygon.
  *  - 'dangles'
- *      Type: array of GEOSGeometry 
+ *      Type: array of GEOSGeometry
  *      Edges which have one or both ends which are
  *      not incident on another edge endpoint
- *  - 'invalid_rings' 
+ *  - 'invalid_rings'
  *      Type: array of GEOSGeometry
  *      Edges which form rings which are invalid
  *      (e.g. the component lines contain a self-intersection)
@@ -2484,7 +2484,7 @@ PHP_FUNCTION(GEOSPolygonize)
     array_init(array_elem);
     dumpGeometry(rings, array_elem);
     GEOSGeom_destroy(rings);
-    add_assoc_zval(return_value, "rings", array_elem); 
+    add_assoc_zval(return_value, "rings", array_elem);
 
     MAKE_STD_ZVAL(array_elem);
     array_init(array_elem);

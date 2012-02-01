@@ -1,14 +1,14 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
 noinst_LTLIBRARIES = libgeomprep.la
 
-INCLUDES = -I$(top_srcdir)/include 
+INCLUDES = -I$(top_srcdir)/include
 
 ## these are full inlined
-# PolygonExtracter.cpp 
-# PointExtracter.cpp 
-# LinearComponentExtracter.cpp 
+# PolygonExtracter.cpp
+# PointExtracter.cpp
+# LinearComponentExtracter.cpp
 
 libgeomprep_la_SOURCES = \
     AbstractPreparedPolygonContains.cpp \

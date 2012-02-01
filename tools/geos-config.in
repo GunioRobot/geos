@@ -35,7 +35,7 @@ case $1 in
     echo @VERSION@
      ;;
     --cflags)
-    echo -I${prefix}/include 
+    echo -I${prefix}/include
       ;;
     --libs)
       echo -L${libdir} -lgeos
@@ -50,7 +50,7 @@ case $1 in
       echo ${prefix}/include
       ;;
     --jtsport)
-    echo @JTS_PORT@ 
+    echo @JTS_PORT@
       ;;
     *)
       usage 1 1>&2

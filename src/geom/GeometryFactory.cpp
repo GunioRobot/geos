@@ -9,7 +9,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  **********************************************************************
@@ -56,7 +56,7 @@ using namespace std;
 namespace geos {
 namespace geom { // geos::geom
 
-//namespace { 
+//namespace {
 //	class gfCoordinateOperation: public CoordinateOperation {
 //	using CoordinateOperation::edit;
 //	public:
@@ -167,7 +167,7 @@ GeometryFactory::~GeometryFactory(){
 #endif
 	delete precisionModel;
 }
-  
+
 /*public*/
 Point*
 GeometryFactory::createPointFromInternalCoord(const Coordinate* coord,
@@ -259,7 +259,7 @@ GeometryFactory::createPoint(const CoordinateSequence &fromCoords) const
 	CoordinateSequence *newCoords = fromCoords.clone();
 	Point *g = NULL;
 	try {
-		g = new Point(newCoords,this); 
+		g = new Point(newCoords,this);
 	} catch (...) {
 		delete newCoords;
 		throw;
@@ -587,7 +587,7 @@ GeometryFactory::buildGeometry(vector<Geometry *> *newGeoms) const
 	string geomClass("NULL");
 	bool isHeterogeneous=false;
 	bool hasGeometryCollection=false;
-    
+
 	for (size_t i=0, n=newGeoms->size(); i<n; ++i)
 	{
 		Geometry* geom = (*newGeoms)[i];
@@ -652,7 +652,7 @@ GeometryFactory::buildGeometry(const vector<Geometry *> &fromGeoms) const
 	bool isHeterogeneous=false;
 	bool isCollection=fromGeoms.size()>1;
 	size_t i;
-    
+
 	for (i=0; i<fromGeoms.size(); i++) {
 		string partClass(typeid(*fromGeoms[i]).name());
 		if (geomClass=="NULL") {
@@ -714,7 +714,7 @@ GeometryFactory::destroyGeometry(Geometry *g) const
 
 /*public static*/
 const GeometryFactory*
-GeometryFactory::getDefaultInstance() 
+GeometryFactory::getDefaultInstance()
 {
 	static GeometryFactory defInstance;
 	return &defInstance;

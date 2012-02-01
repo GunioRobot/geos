@@ -1,10 +1,10 @@
-dnl 
+dnl
 dnl GEOS_INIT (MINIMUM_VERSION)
 dnl
 dnl Test for GEOS: define HAVE_GEOS, GEOS_LIBS, GEOS_C_LIBS, GEOS_CFLAGS, GEOS_VERSION
-dnl 
+dnl
 dnl Call as GEOS_INIT or GEOS_INIT(minimum version) in configure.in. Test
-dnl HAVE_GEOS (yes|no) afterwards. If yes, all other vars above can be 
+dnl HAVE_GEOS (yes|no) afterwards. If yes, all other vars above can be
 dnl used in program.
 dnl
 dnl UPDATE 2006/07/06
@@ -18,13 +18,13 @@ AC_DEFUN([GEOS_INIT],[
 	AC_SUBST(GEOS_CFLAGS)
 	AC_SUBST(GEOS_C_LIBS)
 	AC_SUBST(GEOS_C_CFLAGS)
-	AC_SUBST(HAVE_GEOS) 
+	AC_SUBST(HAVE_GEOS)
 	AC_SUBST(GEOS_VERSION)
 
     if test x"$with_geos" = x"no" ; then
         AC_MSG_RESULT([GEOS support disabled])
         GEOS_CONFIG="no"
-        HAVE_GEOS="no"	
+        HAVE_GEOS="no"
     elif test x"$with_geos" = x"yes" -o x"$with_geos" = x"" ; then
         AC_PATH_PROG([GEOS_CONFIG], [geos-config], [no])
     else
@@ -61,7 +61,7 @@ AC_DEFUN([GEOS_INIT],[
        sed 's/\([[0-9]]*\)\.\([[0-9]]*\)\.\([[0-9]]*\).*/\2/'`
     req_micro=`echo $min_geos_version | \
        sed 's/\([[0-9]]*\)\.\([[0-9]]*\)\.\([[0-9]]*\).*/\3/'`
-    
+
     version_ok="no"
     ac_req_version=`expr $req_major \* 100000 \+  $req_minor \* 100 \+ $req_micro`
     ac_geos_version=`expr $geos_major_version \* 100000 \+  $geos_minor_version \* 100 \+ $geos_micro_version`
@@ -71,7 +71,7 @@ AC_DEFUN([GEOS_INIT],[
     fi
 
       if test $version_ok = "no"; then
-         HAVE_GEOS="no"	
+         HAVE_GEOS="no"
       else
         if $GEOS_CONFIG --libs >/dev/null 2>&1; then
           AC_MSG_RESULT(yes)

@@ -9,7 +9,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  **********************************************************************
@@ -21,7 +21,7 @@
 #ifndef GEOS_LINESEGMENT_INL
 #define GEOS_LINESEGMENT_INL
 
-#include <geos/geom/LineSegment.h> 
+#include <geos/geom/LineSegment.h>
 #include <geos/algorithm/CGAlgorithms.h>
 
 #include <cassert>
@@ -113,7 +113,7 @@ LineSegment::operator[](std::size_t i) const
 }
 
 INLINE Coordinate&
-LineSegment::operator[](std::size_t i) 
+LineSegment::operator[](std::size_t i)
 {
 	if (i==0) return p0;
 	assert(i==1);

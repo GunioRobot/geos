@@ -8,14 +8,14 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  * Author: Sandro Santilli <strk@keybit.net>
  *
  ***********************************************************************/
 
-#include <geos/geom/prep/PreparedGeometryFactory.h> 
+#include <geos/geom/prep/PreparedGeometryFactory.h>
 #include <geos/index/strtree/STRtree.h>
 #include <geos/io/WKTReader.h>
 #include <geos/io/WKBReader.h>
@@ -109,12 +109,12 @@ finishGEOS ()
     }
 }
 
-void 
-GEOSFree (void* buffer) 
-{ 
-    GEOSFree_r( handle, buffer ); 
-} 
-    
+void
+GEOSFree (void* buffer)
+{
+    GEOSFree_r( handle, buffer );
+}
+
 /****************************************************************
 ** relate()-related functions
 ** return 0 = false, 1 = true, 2 = error occured
@@ -388,7 +388,7 @@ Geometry *
 GEOSSingleSidedBuffer(const Geometry *g1, double width, int quadsegs,
 	int joinStyle, double mitreLimit, int leftSide)
 {
-    return GEOSSingleSidedBuffer_r( handle, g1, width, quadsegs, 
+    return GEOSSingleSidedBuffer_r( handle, g1, width, quadsegs,
                                joinStyle, mitreLimit, leftSide );
 }
 
@@ -396,7 +396,7 @@ Geometry *
 GEOSOffsetCurve(const Geometry *g1, double width, int quadsegs,
 	int joinStyle, double mitreLimit)
 {
-    return GEOSOffsetCurve_r( handle, g1, width, quadsegs, 
+    return GEOSOffsetCurve_r( handle, g1, width, quadsegs,
                                joinStyle, mitreLimit );
 }
 
@@ -471,7 +471,7 @@ GEOSGetNumCoordinates(const Geometry *g1)
 }
 
 /*
- * Return -1 on exception, 0 otherwise. 
+ * Return -1 on exception, 0 otherwise.
  * Converts Geometry to normal form (or canonical form).
  */
 int
@@ -652,7 +652,7 @@ GEOSSetSRID(Geometry *g, int srid)
     return GEOSSetSRID_r( handle, g, srid );
 }
 
-char 
+char
 GEOSHasZ(const Geometry *g)
 {
     return GEOSHasZ_r( handle, g );
@@ -983,7 +983,7 @@ GEOSWKBWriter_setIncludeSRID(GEOSWKBWriter* writer, const char newIncludeSRID)
 
 
 //-----------------------------------------------------------------
-// Prepared Geometry 
+// Prepared Geometry
 //-----------------------------------------------------------------
 
 const geos::geom::prep::PreparedGeometry*
@@ -1074,14 +1074,14 @@ GEOSSTRtree_insert (geos::index::strtree::STRtree *tree,
 
 void
 GEOSSTRtree_query (geos::index::strtree::STRtree *tree,
-                   const geos::geom::Geometry *g, 
+                   const geos::geom::Geometry *g,
                    GEOSQueryCallback cb,
                    void *userdata)
 {
     GEOSSTRtree_query_r( handle, tree, g, cb, userdata );
 }
 
-void 
+void
 GEOSSTRtree_iterate(geos::index::strtree::STRtree *tree,
                     GEOSQueryCallback callback,
                     void *userdata)

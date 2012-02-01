@@ -1,17 +1,17 @@
 #
-# This file is part of project GEOS (http://trac.osgeo.org/geos/) 
+# This file is part of project GEOS (http://trac.osgeo.org/geos/)
 #
-SUBDIRS = 
+SUBDIRS =
 
 noinst_LTLIBRARIES = liboppolygonize.la
 
-INCLUDES = -I$(top_srcdir)/include 
+INCLUDES = -I$(top_srcdir)/include
 
 liboppolygonize_la_SOURCES = \
     PolygonizeDirectedEdge.cpp \
     PolygonizeEdge.cpp \
     PolygonizeGraph.cpp \
     Polygonizer.cpp \
-    EdgeRing.cpp 
+    EdgeRing.cpp
 
-liboppolygonize_la_LIBADD = 
+liboppolygonize_la_LIBADD =

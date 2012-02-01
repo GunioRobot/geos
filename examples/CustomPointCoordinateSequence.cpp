@@ -7,7 +7,7 @@
  *
  * This is free software; you can redistribute and/or modify it under
  * the terms of the GNU Lesser General Public Licence as published
- * by the Free Software Foundation. 
+ * by the Free Software Foundation.
  * See the COPYING file for more information.
  *
  **********************************************************************
@@ -123,14 +123,14 @@ point_3d CustomPointCoordinateSequence::getPointAt(int pos){
 
 void CustomPointCoordinateSequence::setAt(Coordinate& c, int pos){
 	point_3d pt={c.x,c.y,c.z};
-	if (pos>=0 && pos<size) 
+	if (pos>=0 && pos<size)
 		pts[pos]=pt;
 	else
 		throw  CPCLException("can't change element\n");
 }
 
 void CustomPointCoordinateSequence::setAt(point_3d p, int pos){
-	if (pos>=0 && pos<size) 
+	if (pos>=0 && pos<size)
 		pts[pos]=p;
 	else
 		throw  CPCLException("can't change element\n");
